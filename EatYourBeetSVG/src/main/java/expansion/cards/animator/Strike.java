@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.resources.Resources_Animator;
 import expansion.cards.AnimatorCardExtension;
 import expansion.resources.Resources_Expansion;
 import eatyourbeets.utilities.GameActionsHelper;
@@ -16,7 +17,7 @@ public class Strike extends AnimatorCardExtension
 
     public Strike(String id, int cost, CardTarget target)
     {
-        super(Resources_Expansion.GetCardStrings(id), id, Resources_Expansion.GetCardImage("animator:StrikeAlt"), cost, CardType.ATTACK, CardColor.COLORLESS,
+        super(Resources_Expansion.GetCardStrings(id), id, Resources_Animator.GetCardImage("animator:StrikeAlt"), cost, CardType.ATTACK, CardColor.COLORLESS,
                 CardRarity.BASIC, target);
 
         //setBannerTexture("images\\cardui\\512\\banner_uncommon.png","images\\cardui\\1024\\banner_uncommon.png");
