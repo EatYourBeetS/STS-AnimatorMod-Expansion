@@ -1,4 +1,4 @@
-package expansion.cards;
+package expansion.cards.animator;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.utilities.GameActionsHelper;
 
-public class Strike_Jojos extends StrikeExtension
+public class Strike_Jojos extends expansion.cards.StrikeExtension
 {
     public static final String ID = CreateFullID(Strike_Jojos.class.getSimpleName());
 
