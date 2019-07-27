@@ -10,7 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="Maven: eatyourbeetsvg:eatyourbeetsvg:1.0.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/TheAnimator.jar!/" />
@@ -19,7 +19,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="Maven: com.megacrit.cardcrawl:slaythespire:07-01-2019">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/desktop-1.0.jar!/" />
@@ -28,7 +28,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="Maven: basemod:basemod:5.14.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/BaseMod.jar!/" />
@@ -37,7 +37,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="Maven: com.evacipated.cardcrawl:ModTheSpire:3.11.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/ModTheSpire.jar!/" />
@@ -46,7 +46,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="Maven: com.evacipated.cardcrawl:stslib:1.17.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/StSLib.jar!/" />

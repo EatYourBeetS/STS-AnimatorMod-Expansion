@@ -65,7 +65,7 @@ public class Resources_Expansion extends AbstractResources
 
             try {
                 logger.info("Adding: " + s);
-                LoadCard(Class.forName("expansion.cards.animator." + s));
+                LoadCard(Class.forName("expansion.cards.animator." + s.replace("animator:expansion:", "")));
             } catch (ClassNotFoundException var6) {
                 logger.warn("Class not found : " + s);
             }
