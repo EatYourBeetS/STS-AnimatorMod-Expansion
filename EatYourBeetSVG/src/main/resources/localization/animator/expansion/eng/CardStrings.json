@@ -1,6 +1,6 @@
 
 {
-	"animator:Strike_Jojos":
+	"animator:expansion:Strike_Jojo":
 	{
 		"DESCRIPTION": "Deal !D! damage. NL Recall: Deal !M! damage to a random enemy.",
 		"NAME": "Improved Strike"
