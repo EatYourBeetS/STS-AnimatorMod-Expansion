@@ -39,7 +39,7 @@ public class Resources_Expansion extends AbstractResources
     @Override
     protected void InitializeCards()
     {
-
+LoadCustomCards("animator");
     }
 
     @Override

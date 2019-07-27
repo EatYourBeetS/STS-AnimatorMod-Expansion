@@ -1,10 +1,8 @@
 
 {
-	"animator:expansion:DeleteMe":
+	"animator:Strike_Jojos":
 	{
-		"DESCRIPTION": "Sample card json, delete this.",
-		"EXTENDED_DESCRIPTION": ["Optional Additional Text for a tooltip or similar."],
-		"NAME": "Sample",
-		"UPGRADE_DESCRIPTION": "Optional Upgrade Text."
+		"DESCRIPTION": "Deal !D! damage. NL Recall: Deal !M! damage to a random enemy.",
+		"NAME": "Improved Strike"
 	}
 }
