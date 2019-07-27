@@ -7,11 +7,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.utilities.GameActionsHelper;
 
-public class Strike_Jojos extends expansion.cards.StrikeExtension
+public class Strike_Jojo extends Strike
 {
-    public static final String ID = CreateFullID(Strike_Jojos.class.getSimpleName());
+    public static final String ID = CreateFullID(Strike_Jojo.class.getSimpleName());
 
-    public Strike_Jojos()
+    public Strike_Jojo()
     {
         super(ID, 1, CardTarget.ENEMY);
 

@@ -1,23 +1,20 @@
 package expansion.cards.animator;
 
 import basemod.helpers.BaseModCardTags;
-import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import expansion.cards.AnimatorCardExtension;
 import expansion.resources.Resources_Expansion;
 import eatyourbeets.utilities.GameActionsHelper;
-import eatyourbeets.cards.AnimatorCard;
 import patches.AbstractEnums;
 
-public class StrikeExtension extends AnimatorCardExtension
+public class Strike extends AnimatorCardExtension
 {
-    public static final String ID = CreateFullID(StrikeExtension.class.getSimpleName());
+    public static final String ID = CreateFullID(Strike.class.getSimpleName());
 
-    public StrikeExtension(String id, int cost, CardTarget target)
+    public Strike(String id, int cost, CardTarget target)
     {
         super(Resources_Expansion.GetCardStrings(id), id, Resources_Expansion.GetCardImage("animator:StrikeAlt"), cost, CardType.ATTACK, CardColor.COLORLESS,
                 CardRarity.BASIC, target);
@@ -29,7 +26,7 @@ public class StrikeExtension extends AnimatorCardExtension
         this.tags.add(AbstractEnums.CardTags.IMPROVED_STRIKE);
     }
 
-    public StrikeExtension()
+    public Strike()
     {
         super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
 
