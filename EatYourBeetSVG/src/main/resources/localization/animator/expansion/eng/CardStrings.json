@@ -2,7 +2,12 @@
 {
 	"animator:expansion:Strike_Jojo":
 	{
-		"DESCRIPTION": "Deal !D! damage. NL Recall: Deal !M! damage to a random enemy.",
+		"DESCRIPTION": "Deal !D! damage. NL Legacy: Gain !M! Dexterity until end of turn.",
 		"NAME": "Improved Strike"
+	},
+	"animator:expansion:Defend_Jojo":
+	{
+		"DESCRIPTION": "Gain !B! Block. NL Legacy: Gain !M! Strength until end of turn.",
+		"NAME": "Improved Defend"
 	}
 }
