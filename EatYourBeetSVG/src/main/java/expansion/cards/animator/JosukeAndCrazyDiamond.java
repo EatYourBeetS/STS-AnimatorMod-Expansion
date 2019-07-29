@@ -22,13 +22,13 @@ public class JosukeAndCrazyDiamond extends AnimatorCardExtension implements OnEn
 
     public JosukeAndCrazyDiamond()
     {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
 
-        Initialize(0,0, 4);
+        Initialize(4,0, 0);
 
         this.tags.add(CardTags.HEALING);
 
-        //AddExtendedDescription();
+        AddExtendedDescription();
 
         SetSynergy(Synergies.Jojo);
     }
@@ -37,18 +37,19 @@ public class JosukeAndCrazyDiamond extends AnimatorCardExtension implements OnEn
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, this.damage));
 
         if (HasActiveSynergy())
         {
             if (PlayerStatistics.getSynergiesThisTurn() == 0)
             {
-                GameActionsHelper.DrawCard(p, 1);
+                GameActionsHelper.GainBlock(p, this.damage);
                 //Original Synergy ?
-            }
 
-            PlayerStatistics.onEndOfTurn.Subscribe(this);
+            }
         }
+
+        PlayerStatistics.onEndOfTurn.Subscribe(this);
     }
 
     @Override
@@ -59,8 +60,8 @@ public class JosukeAndCrazyDiamond extends AnimatorCardExtension implements OnEn
         AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(this.makeStatEquivalentCopy()));
 
         //End of turn effect
-        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.magicNumber));
-        GameActionsHelper.GainTemporaryHP(p, p, magicNumber);
+        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.damage));
+        GameActionsHelper.GainTemporaryHP(p, p, this.damage);
 
         PlayerStatistics.onEndOfTurn.Unsubscribe(this);
     }
@@ -71,7 +72,7 @@ public class JosukeAndCrazyDiamond extends AnimatorCardExtension implements OnEn
     {
         if (TryUpgrade())
         {
-            upgradeMagicNumber(2);
+            upgradeDamage(2);
         }
     }
 
