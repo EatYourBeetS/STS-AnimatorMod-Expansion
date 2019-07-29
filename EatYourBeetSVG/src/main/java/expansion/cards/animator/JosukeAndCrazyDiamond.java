@@ -46,6 +46,8 @@ public class JosukeAndCrazyDiamond extends AnimatorCardExtension implements OnEn
                 GameActionsHelper.DrawCard(p, 1);
                 //Original Synergy ?
             }
+
+            PlayerStatistics.onEndOfTurn.Subscribe(this);
         }
     }
 
