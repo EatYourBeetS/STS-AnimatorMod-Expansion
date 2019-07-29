@@ -12,7 +12,7 @@
 	},
 	"animator:expansion:JosukeAndCrazyDiamond":
 	{
-		"DESCRIPTION": "[#EFC851]Crazy [#EFC851]Diamond. NL Lose !D! HP. NL Heal !D! and NL Gain that much Temp._HP at end of turn. NL Synergy: Gain !D! Block.",
+		"DESCRIPTION": "[#EFC851]Crazy [#EFC851]Diamond. NL Lose !D! HP. NL Heal !D! HP and NL Gain that much Temp._HP at end of turn. NL Synergy: Gain !D! Block.",
 		"EXTENDED_DESCRIPTION": ["Crazy Diamond", "This card scales with strength."],
 		"NAME": "Josuke"
 	}
