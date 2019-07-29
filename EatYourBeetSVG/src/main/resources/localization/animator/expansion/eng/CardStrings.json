@@ -9,5 +9,10 @@
 	{
 		"DESCRIPTION": "Gain !B! Block. NL Legacy: Gain !M! Strength until end of turn.",
 		"NAME": "Improved Defend"
+	},
+	"animator:expansion:JosukeAndCrazyDiamond":
+	{
+		"DESCRIPTION": "Lose !M! Health. Heal !M! and Gain that much Temp. HP at end of turn. NL Synergy: this turn, draw 1 card.",
+		"NAME": "Josuke and Crazy Diamond"
 	}
 }

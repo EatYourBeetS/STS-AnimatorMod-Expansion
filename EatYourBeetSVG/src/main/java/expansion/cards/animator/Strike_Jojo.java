@@ -29,7 +29,6 @@ public class Strike_Jojo extends Strike
     public void triggerOnExhaust()
     {
         super.triggerOnExhaust();
-
         AbstractPlayer p = AbstractDungeon.player;
         PlayerStatistics.ApplyTemporaryDexterity(p, p, 1);
 
