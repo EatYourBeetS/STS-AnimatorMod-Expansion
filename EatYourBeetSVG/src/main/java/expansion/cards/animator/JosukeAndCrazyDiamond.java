@@ -22,7 +22,7 @@ public class JosukeAndCrazyDiamond extends AnimatorCardExtension implements OnEn
 
     public JosukeAndCrazyDiamond()
     {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
 
         Initialize(0,0, 4);
 

@@ -12,7 +12,7 @@
 	},
 	"animator:expansion:JosukeAndCrazyDiamond":
 	{
-		"DESCRIPTION": "Lose !M! Health. Heal !M! and Gain that much Temp. HP at end of turn. NL Synergy: this turn, draw 1 card.",
-		"NAME": "Josuke and Crazy Diamond"
+		"DESCRIPTION": "[#e5377f]Crazy [#e5377f]Diamond NL Lose !M! Health. NL Heal !M! and Gain that much Temp. HP at end of turn. NL Synergy: this turn, draw 1 card.",
+		"NAME": "Josuke"
 	}
 }
