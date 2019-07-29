@@ -1,6 +1,7 @@
 package expansion.resources;
 
 import basemod.BaseMod;
+import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
