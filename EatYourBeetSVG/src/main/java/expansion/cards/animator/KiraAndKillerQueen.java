@@ -34,31 +34,34 @@ public class KiraAndKillerQueen extends AnimatorCardExtension
         public void use(AbstractPlayer p, AbstractMonster m)
         {
         if ((float)p.currentHealth / (float)p.maxHealth < 0.25F) {
-            //HP < 25 %
+            //HP < 25 % (Bites the Dust)
             GameActionsHelper.DamageAllEnemies(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
 
             Iterator enm = PlayerStatistics.GetCurrentEnemies(true).iterator();
             while(enm.hasNext()) {
                 AbstractMonster m1 = (AbstractMonster)enm.next();
-                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, this.magicNumber), 3);
+                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, 1),  this.magicNumber);
+                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, 1),  this.magicNumber);
+                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, 1),  this.magicNumber);
             }
         } else if ((float)p.currentHealth / (float)p.maxHealth < 0.50F) {
-            //HP < 50 %
+            //HP < 50 % (Sheer Heart Attack)
             GameActionsHelper.DamageAllEnemies(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
 
             Iterator enm = PlayerStatistics.GetCurrentEnemies(true).iterator();
             while(enm.hasNext()) {
                 AbstractMonster m1 = (AbstractMonster)enm.next();
-                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, this.magicNumber), 2);
+                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, 1), this.magicNumber);
+                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, 1),  this.magicNumber);
             }
         } else {
-            //HP > 50 %
+            //HP > 50 % (Bomb Transmutation)
             GameActionsHelper.DamageAllEnemies(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
 
             Iterator enm = PlayerStatistics.GetCurrentEnemies(true).iterator();
             while(enm.hasNext()) {
                 AbstractMonster m1 = (AbstractMonster)enm.next();
-                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, this.magicNumber), 1);
+                GameActionsHelper.ApplyPower(p, m1, new BurningPower(m1, p, 1), this.magicNumber);
             }
         }
 
