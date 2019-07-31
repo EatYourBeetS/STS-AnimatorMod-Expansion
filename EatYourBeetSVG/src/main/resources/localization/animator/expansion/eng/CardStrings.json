@@ -15,5 +15,11 @@
 		"DESCRIPTION": "[#EFC851]Crazy [#EFC851]Diamond. NL Lose !D! HP. NL Heal !D! HP and NL Gain that much Temp._HP at end of turn. NL Synergy: Gain !D! Block.",
 		"EXTENDED_DESCRIPTION": ["Crazy Diamond", "This card scales with strength."],
 		"NAME": "Josuke"
+	},
+	"animator:expansion:KiraAndKillerQueen":
+	{
+		"DESCRIPTION": "[#EFC851]Killer [#EFC851]Queen. NL Deal !D! damage and apply !M! Burning to ALL enemies.",
+		"EXTENDED_DESCRIPTION": ["Killer Queen", "While you are below 50% max HP, this card will apply twice the #yBurning amount, and while you are below 25% this card will apply triple the #yBurning amount."],
+		"NAME": "Kira"
 	}
 }
