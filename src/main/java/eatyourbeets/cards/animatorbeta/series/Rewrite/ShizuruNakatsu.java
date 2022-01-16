@@ -24,43 +24,41 @@ public class ShizuruNakatsu extends AnimatorBetaCard
     {
         super(DATA);
 
-        Initialize(6, 3, 2);
+        Initialize(1, 3, 2, 5);
         SetUpgrade(0, 3, 0);
-        SetAffinity_Green(2, 0, 1);
+        SetAffinity_Green(2, 0, 2);
     }
 
     @Override
-    public AbstractAttribute GetDamageInfo()
+    protected float GetInitialDamage()
     {
         if (CheckAttackCondition())
         {
-            return super.GetDamageInfo();
+            return super.GetInitialDamage() + secondaryValue;
         }
-
-        return null;
+        return super.GetInitialDamage();
     }
 
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.GUNSHOT);
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.DiscardFromHand(name, magicNumber, false)
-                .ShowEffect(true, true)
-                .SetFilter(c -> c.type == CardType.SKILL)
-                .SetOptions(false, true, false)
-                .AddCallback((cards) -> {
-                            if (cards.size() >= magicNumber) {
-                                GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID);
+        if (info.IsSynergizing) {
+            GameActions.Bottom.DiscardFromHand(name, magicNumber, false)
+                    .ShowEffect(true, true)
+                    .SetFilter(c -> c.type == CardType.SKILL)
+                    .SetOptions(false, true, false)
+                    .AddCallback((cards) -> {
+                                if (cards.size() >= magicNumber) {
+                                    GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID);
+                                }
                             }
-                        }
-                );
-
-        if (CheckAttackCondition())
-        {
-            GameActions.Bottom.DealDamageToAll(this, AttackEffects.GUNSHOT);
+                    );
         }
+
     }
 
     private int GetNumberOfSkills(CardGroup group)

@@ -559,6 +559,11 @@
 	  "EXTENDED_DESCRIPTION": ["Once per turn: Gain [A] when {~Haste} triggers. Whenever you shuffle your deck: Give {~Haste} to #b{0} random cards. || Pay [B]: Channel 1 [Dark]. Trigger it once for every card in hand."],
 	  "NAME": "Akane Senri"
 	},
+	"animatorbeta:AkiraInoue":
+	{
+	  "DESCRIPTION": "Fetch 1 of !M! cards from your discard pile and Motivate it. || <SLM>. Any Stance: Gain its corresponding {<W> Token}.",
+	  "NAME": "Akira Inoue"
+	},
 	"animatorbeta:Chibimoth":
 	{
 	  "DESCRIPTION": "Choose 1: Gain !M! [F] and !S! [Thorns], ** or Gain !M! [A] and !S! [Support Damage]. || Draw Kotori ** Kanbe from any pile.",
@@ -621,7 +626,7 @@
 	},
 	"animatorbeta:ShizuruNakatsu":
 	{
-	  "DESCRIPTION": "Discard !M! {Skills} to Enter <AS>. || If your highest {Affinity} is <G>: Deal !D! {~Ranged} damage to ** ALL enemies.",
+	  "DESCRIPTION": "Synergy: Discard !M! {Skills} to Enter <AS>. || If your highest {Affinity} is <G>: Deal !S! additional damage.",
 	  "NAME": "Shizuru Nakatsu"
 	},
 	"animatorbeta:SougenEsaka":
@@ -647,9 +652,14 @@
   },
   "BETA:ROZENMAIDEN":
   {
+	"animatorbeta:Barasuishou":
+	{
+	  "DESCRIPTION": "{~Unique}. Exhaust a card from your hand. || If it wasn't a Hindrance: Upgrade this.",
+	  "NAME": "Barasuishou"
+	},
 	"animatorbeta:Curse_JunTormented":
 	{
-	  "DESCRIPTION": "Unplayable. || At the end of turn: Gain 1 Weak and Frail. || When Discarded: Exhaust.",
+	  "DESCRIPTION": "When drawn or created: Duplicate ALL other {Hindrances} in hand. || <LIM>. When Exhausted: Obtain <B> Token.",
 	  "NAME": "Tormented Jun"
 	},
 	"animatorbeta:Curse_Rozen":
@@ -669,14 +679,9 @@
 	  "NAME": "Enju",
 	  "UPGRADE_DESCRIPTION": "Shuffle a {Barasuishou} with X+1 into your draw pile. ** At start of your turn, Add a {Crystallize} and Upgrade a random card in your hand."
 	},
-	"animatorbeta:Enju_Barasuishou":
-	{
-	  "DESCRIPTION": "{~Unique}. Exhaust a card from your hand. || If it wasn't a Hindrance: Upgrade this.",
-	  "NAME": "Barasuishou"
-	},
 	"animatorbeta:Hinaichigo":
 	{
-	  "DESCRIPTION": "Apply !M! [Weak] [Vulnerable]. || <FS>: Apply !S! [Poison]. ** Otherwise: Enter <FS>.",
+	  "DESCRIPTION": "If the target has [Poison]: Apply !M! [Weak]. Otherwise: Apply !S! [Poison]. || <ST>. Gain [B].",
 	  "NAME": "Hinaichigo"
 	},
 	"animatorbeta:JunSakurada":
@@ -687,7 +692,7 @@
 	},
 	"animatorbeta:Kanaria":
 	{
-	  "DESCRIPTION": "Whenever you apply a Debuff: Gain 2 [Block]. || <LIM>. On Synergy: Add {Pizzicato} to your hand and Retain it.",
+	  "DESCRIPTION": "The first time a {Hindrance} is created each turn: ** Gain !M! [L]. || Once per turn, pay {0} [E]: Obtain {Pizzicato}.",
 	  "EXTENDED_DESCRIPTION": ["Whenever you apply a Debuff, gain #b{0} [Block]."],
 	  "NAME": "Kanaria"
 	},
@@ -704,20 +709,24 @@
 	},
 	"animatorbeta:MeguKakizaki":
 	{
-	  "DESCRIPTION": "<LIM>. Exhaust a Curse anywhere to heal !M! HP after combat, then Exhaust. || When Discarded: Draw {Suigintou} from anywhere.",
+	  "DESCRIPTION": "Transfer !M! [DD] from you to a random enemy. || !A! <D>. When Exhausted: Apply !S! [Vulnerable] to ALL enemies.",
 	  "EXTENDED_DESCRIPTION": ["Exhaust a curse to heal."],
-	  "NAME": "Megu Kakizaki",
-	  "UPGRADE_DESCRIPTION": "<LIM>. Exhaust a Curse anywhere to heal !M! HP after combat, then Exhaust. || When Discarded: Draw {Suigintou} from anywhere and Retain it."
+	  "NAME": "Megu Kakizaki"
+	},
+	"pcl:MitsuKusabue":
+	{
+	  "DESCRIPTION": "Draw !M! card(s) and {~Retain} them. They cost 1 ** more this turn. || !A! <L>: Gain !S! [THP] per <L> one.",
+	  "NAME": "Mitsu Kusabue"
 	},
 	"animatorbeta:NoriSakurada":
 	{
-	  "DESCRIPTION": "Draw !M! card(s). Put 1 card on top of your draw pile. || At the end of turn: Reload.",
+	  "DESCRIPTION": "Fetch a random card from your discard pile, then discard a card. || !A! <L>: At the end of turn: ** {Reload}: Remove !S! [DD].",
 	  "EXTENDED_DESCRIPTION": ["At end of this turn, discard any number of cards in your hand."],
 	  "NAME": "Nori Sakurada"
 	},
 	"animatorbeta:Shinku":
 	{
-	  "DESCRIPTION": "<ST>: <DRW-M>. || Discard your hand. Obtain [T-Knife] for each card discarded. || Can be Upgraded thrice.",
+	  "DESCRIPTION": "Cycle !M! card(s). || Exhaust a <D> card from your discard pile to Gain !S! [THP]. If it was a {Hindrance}: Also gain [C].",
 	  "NAME": "Shinku"
 	},
 	"animatorbeta:Shirosaki":
@@ -733,7 +742,7 @@
 	},
 	"animatorbeta:Souseiseki":
 	{
-	  "DESCRIPTION": "Exhaust a card in your hand.  Can only deal damage if the enemy is attacking. || If a Hindrance was Exhausted: Enter <AS>.",
+	  "DESCRIPTION": "Exhaust a card in hand. If it was a Hindrance: ** <DRW>. || Synergy or On Discard: Draw {Suiseiseki}.",
 	  "NAME": "Souseiseki"
 	},
 	"animatorbeta:Strike_RozenMaiden":
@@ -753,9 +762,8 @@
 	},
 	"animatorbeta:Suiseiseki":
 	{
-	  "DESCRIPTION": "Cycle 1 card or exit your Stance. || {Starter}: Add a random card of the same rarity to your discard pile, then gain [A].",
-	  "NAME": "Suiseiseki",
-	  "UPGRADE_DESCRIPTION": "Cycle 1 card or exit your Stance. || On Discard or {Starter}: Add a random card of the same rarity to your discard pile, then gain [A]."
+	  "DESCRIPTION": "Add {Slimed} to your draw pile. ** !A! <O>: Give it {~Retain}. || <LIM>. Synergy with {Souseiseki}: Play this card again.",
+	  "NAME": "Suiseiseki"
 	},
 	"animatorbeta:Suiseiseki_Suidream":
 	{
@@ -764,9 +772,8 @@
 	},
 	"animatorbeta:TomoeKashiwaba":
 	{
-	  "DESCRIPTION": "<slm>. If the top card of your draw pile would Synergize with this: Draw it and gain !B! [Block]. || When Drawn: Lose no [F] next turn.",
-	  "NAME": "Tomoe Kashiwaba",
-	  "UPGRADE_DESCRIPTION": "<slm>. If the top card of your draw pile would Synergize with this: Draw it and gain !B! [Block]. || When Drawn: Gain [F]."
+	  "DESCRIPTION": "{~Retain} a card. Gain the <W> power of a random <W> on that card.",
+	  "NAME": "Tomoe Kashiwaba"
 	}
   }
 }
