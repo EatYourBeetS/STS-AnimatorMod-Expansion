@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.interfaces.delegates.FuncT1;
 import eatyourbeets.ui.hitboxes.AdvancedHitbox;
-import pinacolada.ui.hitboxes.AdvancedHitbox;
 
 import java.util.ArrayList;
 import java.util.List;

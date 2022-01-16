@@ -21,10 +21,6 @@ import eatyourbeets.ui.hitboxes.RelativeHitbox;
 import eatyourbeets.utilities.BetaJUtils;
 import eatyourbeets.utilities.EYBFontHelper;
 import eatyourbeets.utilities.Mathf;
-import pinacolada.resources.GR;
-import pinacolada.ui.hitboxes.AdvancedHitbox;
-import pinacolada.ui.hitboxes.RelativeHitbox;
-import pinacolada.utilities.PCLJUtils;
 
 import java.util.*;
 
@@ -96,12 +92,12 @@ public class GUI_Dropdown<T> extends GUIElement
                 new AdvancedHitbox(hb.x + hb.width - SCROLLBAR_PADDING, hb.y + CalculateScrollbarOffset(), SCROLLBAR_WIDTH,rowHeight * this.visibleRowCount())
                 .SetIsPopupCompatible(true))
         .SetOnScroll(this::OnScroll);
-        this.button = new GUI_Button(GR.PCL.Images.RectangularButton.Texture(), this.hb)
+        this.button = new GUI_Button(GR.Animator.Images.RectangularButton.Texture(), this.hb)
                 .SetColor(Color.GRAY)
                 .SetFont(font, fontScale)
-                .SetText(currentIndices.size() + " " + GR.PCL.Strings.SeriesUI.ItemsSelected)
+                .SetText(currentIndices.size() + " " + GR.Animator.Strings.SeriesUI.ItemsSelected)
                 .SetOnClick(this::OpenOrCloseMenu);
-        this.clearButton = new GUI_Button(GR.PCL.Images.X.Texture(), new AdvancedHitbox(hb.x + hb.width, hb.y, hb.height, hb.height).SetIsPopupCompatible(true))
+        this.clearButton = new GUI_Button(GR.Animator.Images.X.Texture(), new AdvancedHitbox(hb.x + hb.width, hb.y, hb.height, hb.height).SetIsPopupCompatible(true))
                 .SetOnClick(() -> {SetSelectionIndices(new int[] {}, true);});
         this.header = new GUI_Label(EYBFontHelper.CardTitleFont_Small, new AdvancedHitbox(hb.x, hb.y + hb.height, hb.width, hb.height)).SetAlignment(0.5f,0.0f,false);
         this.header.SetActive(false);
@@ -563,7 +559,7 @@ public class GUI_Dropdown<T> extends GUIElement
     public void updateForSelection(boolean shouldInvoke) {
         int temp = currentIndices.size() > 0 ? currentIndices.first() : 0;
         if (isMultiSelect) {
-            this.button.text = labelFunctionButton != null ? labelFunctionButton.Invoke(GetCurrentItems()) : currentIndices.size() + " " + GR.PCL.Strings.SeriesUI.ItemsSelected;
+            this.button.text = labelFunctionButton != null ? labelFunctionButton.Invoke(GetCurrentItems()) : currentIndices.size() + " " + GR.Animator.Strings.SeriesUI.ItemsSelected;
         }
         else if (currentIndices.size() > 0) {
             this.topVisibleRowIndex = Math.min(temp, this.rows.size() - this.visibleRowCount());
