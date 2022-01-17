@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.actions.autoTarget.ApplyPowerAuto;
 import eatyourbeets.actions.cardManipulation.ModifyTag;
 import eatyourbeets.actions.powers.ApplyPower;
+import eatyourbeets.actions.powers.ReducePower;
 import eatyourbeets.actions.special.DelayAllActions;
 import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.powers.animator.SupportDamagePower;
@@ -76,6 +77,11 @@ public class BetaActions
     public ModifyTag ModifyTag(CardGroup group, int cards, AbstractCard.CardTags tag, boolean value)
     {
         return Add(new ModifyTag(group, cards, tag, value));
+    }
+
+    public ReducePower ReducePower(AbstractCreature target, AbstractCreature source, String powerID, int amount)
+    {
+        return Add(new ReducePower(target, source, powerID, amount));
     }
 
     public ApplyPower StackPower(AbstractPower power) {

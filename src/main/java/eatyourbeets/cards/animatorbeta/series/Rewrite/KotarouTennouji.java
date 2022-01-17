@@ -16,10 +16,13 @@ import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
 import eatyourbeets.cards.genericEffects.GenericEffect_EnterStance;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.stances.AgilityStance;
+import eatyourbeets.stances.EYBStance;
 import eatyourbeets.stances.ForceStance;
 import eatyourbeets.stances.IntellectStance;
+import eatyourbeets.utilities.BetaGameUtilities;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class KotarouTennouji extends AnimatorBetaCard implements OnStanceChangedSubscriber, OnStartOfTurnPostDrawSubscriber
 {
@@ -31,7 +34,7 @@ public class KotarouTennouji extends AnimatorBetaCard implements OnStanceChanged
     {
         super(DATA);
 
-        Initialize(8, 0, 0);
+        Initialize(14, 0, 0);
         SetUpgrade(3, 0, 0);
         SetAffinity_Star(2, 0, 2);
 
@@ -60,9 +63,7 @@ public class KotarouTennouji extends AnimatorBetaCard implements OnStanceChanged
     {
         if (player.hand.contains(this) && CombatStats.TryActivateLimited(cardID))
         {
-            GameActions.Bottom.ModifyAllInstances(uuid, AbstractCard::upgrade)
-            .IncludeMasterDeck(true)
-            .IsCancellable(false);
+            GameActions.Bottom.ObtainAffinityToken(BetaGameUtilities.GetStanceAffinity(newStance), false);
             flash();
         }
     }

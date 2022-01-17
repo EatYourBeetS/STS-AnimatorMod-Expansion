@@ -654,7 +654,7 @@
   {
 	"animatorbeta:Barasuishou":
 	{
-	  "DESCRIPTION": "{~Unique}. Exhaust a card from your hand. || If it wasn't a Hindrance: Upgrade this.",
+	  "DESCRIPTION": "Deal !M! additional damage for every {Curse} in play. || Exhaust this if you play another card with this in your hand.",
 	  "NAME": "Barasuishou"
 	},
 	"animatorbeta:Curse_JunTormented":
@@ -686,19 +686,19 @@
 	},
 	"animatorbeta:JunSakurada":
 	{
-	  "DESCRIPTION": "{~Unique}. Get {Tormented}. || Upgrade next !M! upgradable card created this combat. <LIM>. After that, upgrade permanently.",
+	  "DESCRIPTION": "Obtain {Tormented}. Next turn: Imitate an Exhausted Attack and increase its damage and [Block] by !M!. || Cooldown !S!: Upgrade permanently and Purge.",
 	  "EXTENDED_DESCRIPTION": ["For the next #b{0} time(s) an upgradable card is created, upgrade it.", "For the next #b{0} time(s) an upgradable card is created, upgrade it, after that, Permanently Upgrade #yJun #ySakurada in your deck."],
 	  "NAME": "Jun Sakurada"
 	},
 	"animatorbeta:Kanaria":
 	{
-	  "DESCRIPTION": "The first time a {Hindrance} is created each turn: ** Gain !M! [L]. || Once per turn, pay {0} [E]: Obtain {Pizzicato}.",
-	  "EXTENDED_DESCRIPTION": ["Whenever you apply a Debuff, gain #b{0} [Block]."],
+	  "DESCRIPTION": "The first time a {Hindrance} is created each turn: ** Gain !M! [B]. || Once per turn, pay {0} [E]: Obtain {Pizzicato}.",
+	  "EXTENDED_DESCRIPTION": ["The next #b{0} time(s) a #yHindrance is created this turn: Gain #b{1} [B]. NL Pay #b{2} [E]: Obtain #yPizzicato."],
 	  "NAME": "Kanaria"
 	},
 	"animatorbeta:Kanaria_Pizzicato":
 	{
-	  "DESCRIPTION": "If you have [Aether]: <DRW-M>. Otherwise: Channel [Aether]. || Discard a card.",
+	  "DESCRIPTION": "Cycle a card. If you draw an: ** Attack -> Apply !M! [Poison] to ALL enemies; ** Power -> Channel [Aether]; ** Other -> Boost [A].",
 	  "NAME": "Pizzicato"
 	},
 	"animatorbeta:Kirakishou":
@@ -707,13 +707,18 @@
 	  "EXTENDED_DESCRIPTION": ["On death, nothing return to your hand.", "On death, {0} is returned to your hand.", "On death, {0} are returned to your hand."],
 	  "NAME": "Kirakishou"
 	},
+	"animatorbeta:LaplacesDemon":
+	{
+	  "DESCRIPTION": "ALL enemies lose [HP] equal to !M! times your <W>. Afterwards, scramble the <W> of ALL cards in hand.",
+	  "NAME": "Laplace's Demon"
+	},
 	"animatorbeta:MeguKakizaki":
 	{
 	  "DESCRIPTION": "Transfer !M! [DD] from you to a random enemy. || !A! <D>. When Exhausted: Apply !S! [Vulnerable] to ALL enemies.",
 	  "EXTENDED_DESCRIPTION": ["Exhaust a curse to heal."],
 	  "NAME": "Megu Kakizaki"
 	},
-	"pcl:MitsuKusabue":
+	"animatorbeta:MitsuKusabue":
 	{
 	  "DESCRIPTION": "Draw !M! card(s) and {~Retain} them. They cost 1 ** more this turn. || !A! <L>: Gain !S! [THP] per <L> one.",
 	  "NAME": "Mitsu Kusabue"
@@ -752,17 +757,18 @@
 	},
 	"animatorbeta:Suigintou":
 	{
-	  "DESCRIPTION": "{~Unique}. || Cooldown !S!: Channel 1 Fire and trigger it !M! times. || On Discard: Obtain a {Black Feather}.",
+	  "DESCRIPTION": "Obtain {Black Feather}. Channel !S! [Dark]. Trigger ALL [Dark] once per {Hindrance} in hand. || !A! <D>: ALL [Dark] gain +!M! [Focus].",
 	  "NAME": "Suigintou"
 	},
 	"animatorbeta:Suigintou_BlackFeather":
 	{
-	  "DESCRIPTION": "Draw Suigintou from anywhere and add a random {Curse} to your hand. || When Discarded: Purge, then apply !M! [Shackles] to a random enemy.",
-	  "NAME": "Black Feather"
+	  "DESCRIPTION": "In hand at the start of turn: Take !M! [DD]. || Fetch {Suigintou} from anywhere. Take !S! damage. ALL enemies take !M! [DD].",
+	  "NAME": "Black Feather",
+	  "UPGRADE_DESCRIPTION": "In hand at the start of turn: Take !M! [DD]. || Fetch {Suigintou} from anywhere. Take !S! damage. ALL enemies take !S! [DD]."
 	},
 	"animatorbeta:Suiseiseki":
 	{
-	  "DESCRIPTION": "Add {Slimed} to your draw pile. ** !A! <O>: Give it {~Retain}. || <LIM>. Synergy with {Souseiseki}: Play this card again.",
+	  "DESCRIPTION": "Add {Slimed} to your draw pile. ** !A! <G>: Give it {~Retain}. || <LIM>. Synergy with {Souseiseki}: Play this card again.",
 	  "NAME": "Suiseiseki"
 	},
 	"animatorbeta:Suiseiseki_Suidream":
@@ -772,7 +778,7 @@
 	},
 	"animatorbeta:TomoeKashiwaba":
 	{
-	  "DESCRIPTION": "{~Retain} a card. Gain the <W> power of a random <W> on that card.",
+	  "DESCRIPTION": "{~Retain} a card. Gain the <W> power of a random <W> on that card. || <SLM>. X <W>: Next turn, gain X [Block].",
 	  "NAME": "Tomoe Kashiwaba"
 	}
   }

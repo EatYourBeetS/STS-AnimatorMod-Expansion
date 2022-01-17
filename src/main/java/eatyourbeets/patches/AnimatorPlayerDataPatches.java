@@ -9,6 +9,7 @@ import eatyourbeets.resources.animator.AnimatorPlayerData;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
 import eatyourbeets.resources.animatorbeta.loadouts.Loadout_Bleach;
 import eatyourbeets.resources.animatorbeta.loadouts.Loadout_Rewrite;
+import eatyourbeets.resources.animatorbeta.loadouts.Loadout_RozenMaiden;
 
 public class AnimatorPlayerDataPatches
 {
@@ -30,6 +31,7 @@ public class AnimatorPlayerDataPatches
 
             add.Invoke(new Loadout_Bleach(), 0);
             add.Invoke(new Loadout_Rewrite(), 0);
+            add.Invoke(new Loadout_RozenMaiden(), 0);
         }
     }
 }
