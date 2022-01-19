@@ -1,7 +1,6 @@
 # Animator Beta Addon
 This is an addon with additional series for the official redesign Animator branch.
 These series are largely based on their counterparts from The Fool, but with adjustments made to conform to the mechanics of the official redesign branch.
-Currently, the Beta branch has two beta series: Bleach and Rewrite. Other beta series and colorless cards, as well as relics, will be added later.
 
 Installation Instructions:
 - Install StsLib, ModTheSpire, and BaseMod (these can be gotten from the Steam workshop. If you have the GOG version, follow these steps instead: https://reddit.com/r/slaythespire/comments/gj5kel/howto_add_mods_to_gog_version/)
