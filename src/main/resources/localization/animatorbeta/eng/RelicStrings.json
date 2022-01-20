@@ -1,4 +1,9 @@
 
 {
-
+  "animatorbeta:PurpleTeddyBear":
+  {
+	"DESCRIPTIONS": ["At the start of each combat, shuffle 3 0-Cost, upgraded Shido Itsukas into your deck."],
+	"FLAVOR": "...Shin?",
+	"NAME": "Purple Teddy Bear"
+  }
 }

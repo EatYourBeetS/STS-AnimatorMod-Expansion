@@ -13,6 +13,12 @@
 		"NAMES": ["aura", "auras"],
 		"PROPER_NAME": "Aura"
 	},
+	"Harmonic":
+	{
+	  "DESCRIPTION": "#ySynergizes with cards from the same #ySeries.",
+	  "NAMES": ["harmonic"],
+	  "PROPER_NAME": "Harmonic"
+	},
 	"Phasing":
 	{
 		"DESCRIPTION": "You have a 35% chance to dodge each attack. Reduce this chance by 5% each turn. Stacking this power resets and delays the chance reduction by 1 turn.",
@@ -24,5 +30,17 @@
 	  "DESCRIPTION": "Reduce a card's #yRicochet by #b1 for every turn that it is in the Exhaust pile. If it is at #b0 while in your Exhaust pile, move it to your draw pile.",
 	  "NAMES": ["ricochet"],
 	  "PROPER_NAME": "Ricochet"
+	},
+	"Self-Immolation":
+	{
+	  "DESCRIPTION": "When you play a card with [Block], ALL characters take [DD] equal to its [Block] times this power's stacks.",
+	  "NAMES": ["self-immolation"],
+	  "PROPER_NAME": "Self-Immolation"
+	},
+	"Sorcery":
+	{
+	  "DESCRIPTION": "The next Orb #yChanneled has additional [Focus].",
+	  "NAMES": ["sorcery"],
+	  "PROPER_NAME": "Sorcery"
 	}
 }

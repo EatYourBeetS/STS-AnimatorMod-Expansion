@@ -3,6 +3,7 @@ package eatyourbeets.resources;
 import basemod.BaseMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.core.Settings;
@@ -30,6 +31,15 @@ import java.util.jar.JarInputStream;
 
 public class BetaResources extends AbstractResources
 {
+    public static class Enums {
+        public static class CardTags {
+            @SpireEnum
+            public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags AUTOPLAY;
+            @SpireEnum
+            public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags HARMONIC;
+        }
+    }
+
     private static final ArrayList<String> classNames = new ArrayList();
     public static BetaResources Beta;
     public static final String BASE_PREFIX = "animatorbeta";
@@ -60,6 +70,23 @@ public class BetaResources extends AbstractResources
         BaseMod.subscribe(Beta);
     }
 
+    @Override
+    protected void InitializeKeywords() {
+        if (!this.isLoaded) {
+            JUtils.LogInfo(this, "InitializeKeywords();");
+            LoadKeywords();
+        }
+    }
+
+    @Override
+    protected void InitializeRelics() {
+        if (!this.isLoaded) {
+            JUtils.LogInfo(this, "InitializeRelics();");
+            LoadCustomRelics();
+        }
+    }
+
+    @Override
     protected void InitializeStrings() {
         if (!this.isLoaded) {
             JUtils.LogInfo(this, "InitializeStrings();");
@@ -126,6 +153,28 @@ public class BetaResources extends AbstractResources
             super.LoadCustomStrings(type, this.GetFile(Settings.language, type.getSimpleName() + ".json"));
         }
 
+    }
+
+    @Override
+    protected void LoadCustomRelics()
+    {
+        String prefix = "eatyourbeets.relics." + BASE_PREFIX;
+        for (String s : betaRelicClassNames)
+        {
+            if (s.startsWith(prefix))
+            {
+                try
+                {
+                    logger.info("Adding: " + s);
+
+                    LoadCustomRelic(Class.forName(s));
+                }
+                catch (ClassNotFoundException e)
+                {
+                    logger.warn("Class not found : " + s);
+                }
+            }
+        }
     }
 
     @Override

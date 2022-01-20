@@ -7,9 +7,7 @@ import eatyourbeets.interfaces.delegates.ActionT2;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.AnimatorPlayerData;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
-import eatyourbeets.resources.animatorbeta.loadouts.Loadout_Bleach;
-import eatyourbeets.resources.animatorbeta.loadouts.Loadout_Rewrite;
-import eatyourbeets.resources.animatorbeta.loadouts.Loadout_RozenMaiden;
+import eatyourbeets.resources.animatorbeta.loadouts.*;
 
 public class AnimatorPlayerDataPatches
 {
@@ -30,6 +28,8 @@ public class AnimatorPlayerDataPatches
             };
 
             add.Invoke(new Loadout_Bleach(), 0);
+            add.Invoke(new Loadout_DateALive(), 0);
+            add.Invoke(new Loadout_GenshinImpact(), 0);
             add.Invoke(new Loadout_Rewrite(), 0);
             add.Invoke(new Loadout_RozenMaiden(), 0);
         }

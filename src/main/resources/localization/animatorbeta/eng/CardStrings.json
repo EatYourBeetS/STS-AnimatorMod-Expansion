@@ -25,7 +25,7 @@
 	},
 	"animatorbeta:EriShiina":
 	{
-	  "DESCRIPTION": "In {Afterlife} or <AS>: Obtain !M! [T-Knife]. || Synergy with {0-cost} cards: Gain !S! [Blur] and [A].",
+	  "DESCRIPTION": "In {Afterlife} or <AS>: Obtain !M! [T-Knife]. || Synergy with {0-cost} cards: Gain !S! [~Blur] and [A].",
 	  "NAME": "Eri Shiina"
 	},
 	"animatorbeta:GirlDeMo":
@@ -218,6 +218,21 @@
 	  "EXTENDED_DESCRIPTION": ["Ranged Attacks on enemies with #yLock-On ignore damage reduction and remove #b1 #yLock-On."],
 	  "NAME": "Asuka Langley"
 	},
+	"animatorbeta:Curse_SearingBurn":
+	{
+	  "DESCRIPTION": "Unplayable. || On Exhaust: ** ALL characters take !M! damage and gain !S! [Burning].",
+	  "NAME": "Searing Burn"
+	},
+	"animatorbeta:DioBrando":
+	{
+	  "DESCRIPTION": "Cooldown !S!: Exhaust and Obtain {The World}. || <DRW-M>. Move any number of cards in hand to your draw pile.",
+	  "NAME": "Dio Brando"
+	},
+	"pcl:DioBrando_TheWorld":
+	{
+	  "DESCRIPTION": "Gain !M! [Strength]. Stun a random enemy.",
+	  "NAME": "The World"
+	},
 	"animatorbeta:ForceImpulseGundam":
 	{
 	  "DESCRIPTION": "Reload: Increase this card's damage by !M! until played. Powers and Statuses trigger Reload twice and Exhaust. || Cooldown !S!: Enter <FS> and Exhaust.",
@@ -235,6 +250,16 @@
 	  "EXTENDED_DESCRIPTION": ["The next #b{0} Defend(s) played this turn activate twice."],
 	  "NAME": "Jet Black"
 	},
+	"animatorbeta:JotaroKujo":
+	{
+	  "DESCRIPTION": "Cooldown !S!: Exhaust and Obtain {Star Platinum}. || Draw a High Cost card and Retain it.",
+	  "NAME": "Jotaro Kujo"
+	},
+	"animatorbeta:JotaroKujo_StarPlatinum":
+	{
+	  "DESCRIPTION": "Gain !S! [~Intangible]. Gain !M! [F].",
+	  "NAME": "Star Platinum"
+	},
 	"animatorbeta:Megunee":
 	{
 	  "DESCRIPTION": "Cooldown !S!: Exhaust this card. || When Exhausted: Put this card in your draw pile zombified after a random number of turns.",
@@ -250,11 +275,6 @@
 	  "DESCRIPTION": "Transform a {Power} or {Status} in your hand into a {Normality} to gain {Phasing}. || When Exhausted: Choose 1 of !M! cards to obtain.",
 	  "EXTENDED_DESCRIPTION": ["transform into a Normality."],
 	  "NAME": "Nao Tomori"
-	},
-	"animatorbeta:SearingBurn":
-	{
-	  "DESCRIPTION": "On Exhaust: ** ALL characters take !M! damage and gain !S! [Burning].",
-	  "NAME": "Searing Burn"
 	},
 	"animatorbeta:Senku":
 	{
@@ -303,13 +323,13 @@
 	},
 	"animatorbeta:KurumiTokisaki":
 	{
-	  "DESCRIPTION": "Give up to !M! cards in your hand {~Delayed}. Gain [Energized] for each. || Cooldown !S!: Purge. Duplicate a {~Delayed} card in your draw or discard pile. It costs 1 less and has {Autoplay}.",
+	  "DESCRIPTION": "Give up to !M! cards in your hand {~Delayed}. Gain [E] next turn for each. || Cooldown !S!: Purge. Duplicate a {~Delayed} card in your draw or discard pile. It costs 1 less and has {Autoplay}.",
 	  "EXTENDED_DESCRIPTION": ["give Delayed."],
 	  "NAME": "Kurumi Tokisaki"
 	},
 	"animatorbeta:MikuIzayoi":
 	{
-	  "DESCRIPTION": "Gain !S! [Inspiration]. Gain double [Inspiration] if you have at least !M! interactable powers. || Synergy: {Motivate} !S!.",
+	  "DESCRIPTION": "Gain !S! [Inspiration]. Gain double [Inspiration] if you have at least !M! interactable powers. || Synergy with Date-A-Live: {Motivate} !S!.",
 	  "NAME": "Miku Izayoi"
 	},
 	"animatorbeta:MioTakamiya":
@@ -319,7 +339,7 @@
 	},
 	"animatorbeta:Mayuri":
 	{
-	  "DESCRIPTION": "Synergizes with Basic cards. || Retain a Defend in your hand. ** <SLM>. Synergy with <B>: Also give it !M! [Block] this combat.",
+	  "DESCRIPTION": "Synergizes with Basic cards. || Retain a Defend in your hand. ** <SLM>. Synergy: Also give it !M! [Block] this combat.",
 	  "NAME": "Mayuri"
 	},
 	"animatorbeta:MukuroHoshimiya":
@@ -329,7 +349,7 @@
 	},
 	"animatorbeta:Natsumi":
 	{
-	  "DESCRIPTION": "Transform up to !M! cards in your hand into random Uncommons. || Whenever you transform a {Hindrance}: Add a {Depression} into your draw pile.",
+	  "DESCRIPTION": "Transform up to !M! cards into random Uncommons. Gain !S! {Sorcery} per non-Hindrance transformed. || !A! <B>: Upgrade them.",
 	  "EXTENDED_DESCRIPTION": ["Choose a card to transform."],
 	  "NAME": "Natsumi Kyouno"
 	},
@@ -358,9 +378,9 @@
 	},
 	"animatorbeta:ShidoItsuka":
 	{
-	  "DESCRIPTION": "Add 1 of !M! {Synergic} cards to your discard pile. || Synergy: Add it to your draw pile instead.",
+	  "DESCRIPTION": "Add 1 of !M! {Synergic} cards to your discard pile. || Synergy with Date-A-Live: Add it to your draw pile instead.",
 	  "NAME": "Shido Itsuka",
-	  "UPGRADE_DESCRIPTION": "Add 1 of !M! Upgraded {Synergic} cards to your discard pile. || Synergy: Add it to your draw pile instead."
+	  "UPGRADE_DESCRIPTION": "Add 1 of !M! Upgraded {Synergic} cards to your discard pile. || Synergy with Date-A-Live: Add it to your draw pile instead."
 	},
 	"animatorbeta:TohkaYatogami":
 	{
@@ -374,8 +394,8 @@
 	},
 	"animatorbeta:YoshinoHimekawa":
 	{
-	  "DESCRIPTION": "When drawn: Discard this card and change its form, ** then gain [Blur]. || When Exhausted, gain !S! [Blur]. ** <LIM>. Also Shuffle {Zadkiel} into your discard pile.",
-	  "EXTENDED_DESCRIPTION": ["Gain !S! [Blur]. Apply !M! [Freezing] to ALL enemies."],
+	  "DESCRIPTION": "When drawn: Discard this card and change its form, ** then gain !M! [~Blur]. || Gain !M! [~Blur]. ** <LIM>. Also Shuffle {Zadkiel} into your discard pile.",
+	  "EXTENDED_DESCRIPTION": ["Gain !S! [~Blur]. Apply !M! [Freezing] to ALL enemies."],
 	  "NAME": "Yoshino Himekawa"
 	},
 	"animatorbeta:Zadkiel":
@@ -393,17 +413,17 @@
 	},
 	"animatorbeta:AyakaKamisato":
 	{
-	  "DESCRIPTION": "For !M! turns, when you gain [Block]: You and a random enemy take that much [Delayed Damage]. || <LIM>. !S! [Delayed Damage] or !A! <B>: ** Play {Frost Core}.",
+	  "DESCRIPTION": "Take !S! damage. Gain !M! {Self-Immolation}. || <LIM>. If this effect would kill you: Play and purge a random [Block] card in play first.",
 	  "NAME": "Ayaka Kamisato"
 	},
 	"animatorbeta:BarbaraPegg":
 	{
-	  "DESCRIPTION": "Gain|Boost [B]. || <SLM>. !A! <B>. If ALL enemies intend to attack: Channel 1 [Water] and trigger it once.",
+	  "DESCRIPTION": "Trigger a random Orb once for each enemy intending to attack. || !A! <B>: Gain !S! [B].",
 	  "NAME": "Barbara Pegg"
 	},
 	"animatorbeta:Bennett":
 	{
-	  "DESCRIPTION": "Below 30% max HP or Synergy: Gain !M! [Vigor]. || Less than !A! <R>: ** Take !S! [Delayed Damage].",
+	  "DESCRIPTION": "Take !M! [Delayed Damage]. || Gain !M! [Vigor]. Gain !S! more on Synergy.",
 	  "NAME": "Bennett"
 	},
 	"animatorbeta:Curse_Delusion":
@@ -420,6 +440,12 @@
 	{
 	  "DESCRIPTION": "Gain|Boost !M! [C]. Randomly Channel [Lightning] or [Dark]. || <LIM>. Synergy: Add {Oz} to your Discard Pile.",
 	  "NAME": "Fischl"
+	},
+	"animatorbeta:Fischl_Oz":
+	{
+	  "DESCRIPTION": "Gain 1 Orb Slot. || The first time you play a LV2 <B> or <D> card each turn: Randomly Channel 1 [Lightning] or [Dark].",
+	  "EXTENDED_DESCRIPTION": ["The first #b{0} LV.2 #yBlue or LV.2 #yDark card(s) played this turn will also randomly Channel 1 #yLightning or #yDark. You have played #b{1} LV.2 #yBlue and LV.2 #yDark card(s)."],
+	  "NAME": "Oz"
 	},
 	"animatorbeta:Ganyu":
 	{
@@ -438,14 +464,14 @@
 	},
 	"animatorbeta:JumpyDumpty":
 	{
-	  "DESCRIPTION": "Apply !M! [Burning]. || If Fatal or if the enemy loses its [Block]: Gain !S! [Burning] and add a copy of this card to your Draw Pile.",
+	  "DESCRIPTION": "Channel 1 [Fire]. || If Fatal or if the enemy loses its [Block]: Gain !S! [Burning] and add a copy of this card to your Draw Pile.",
 	  "NAME": "Jumpy Dumpty"
 	},
 	"animatorbeta:KaeyaAlberich":
 	{
-	  "DESCRIPTION": "{Channel} 1 [Frost]. Trigger your first {Common Orb}. || <SLM>. Synergy: Apply !M! [Shackles] to ALL enemies.",
+	  "DESCRIPTION": "{Channel} 1 [Frost]. Trigger your first [Frost] or [Lightning]. || <SLM>. Synergy: Apply !M! [Shackles] to ALL enemies.",
 	  "NAME": "Kaeya Alberich",
-	  "UPGRADE_DESCRIPTION": "{Channel} 1 [Frost]. Trigger your first Orb and your first {Common Orb}. || <SLM>. Synergy: Apply !M! [Shackles] to ALL enemies."
+	  "UPGRADE_DESCRIPTION": "{Channel} 1 [Frost]. Trigger your first Orb and your first [Frost] or [Lightning]. || <SLM>. Synergy: Apply !M! [Shackles] to ALL enemies."
 	},
 	"animatorbeta:Kazuha":
 	{
@@ -459,12 +485,12 @@
 	},
 	"animatorbeta:Keqing":
 	{
-	  "DESCRIPTION": "Cooldown !S!: Moves to your draw pile. Progress Cooldown by 1 upon Evoking [Lightning] or [Aether]. || Motivate and give {~Haste} to this card and a random card in your discard pile.",
+	  "DESCRIPTION": "Cooldown !S!: Moves to your draw pile and gains {~Haste}. || When drawn with {~Haste}: Channel [Lightning] and trigger it once.",
 	  "NAME": "Keqing"
 	},
 	"animatorbeta:Klee":
 	{
-	  "DESCRIPTION": "Apply !M! [Vulnerable] to ALL enemies. || Add !S! {Jumpy Dumpty} ** to your Draw Pile. ** 3 [Fire] and/or !A! <R>: Add 1 more.",
+	  "DESCRIPTION": "Increase the damage bonus of [Burning] by !M!% this combat. || Add !S! {Jumpy Dumpty} ** to your Draw Pile. ** !A! <R>: Add 1 more.",
 	  "NAME": "Klee"
 	},
 	"animatorbeta:KokomiSangonomiya":
@@ -474,7 +500,7 @@
 	},
 	"animatorbeta:LisaMinci":
 	{
-	  "DESCRIPTION": "{Scry} !M! cards. Activate these effects once if any Scried ** card's cost is: || 0 or None: Gain|Boost !S! [I] ** 1 or X: Gain !S! [Energized]. ** 2+: Channel [Lightning]",
+	  "DESCRIPTION": "{Scry} !M! cards. If you discard a card of cost: || 0 or None: Gain|Boost !S! [I] ** 1 or X: Gain !S! [E] next turn. ** 2+: Channel [Lightning]",
 	  "NAME": "Lisa Minci"
 	},
 	"animatorbeta:Noelle":
@@ -482,16 +508,11 @@
 	  "DESCRIPTION": "<ST>: Trigger your ** first [Earth]. Otherwise, ** Channel 1 [Earth]. || Synergy: Retain 1 ** <L> or <R> card.",
 	  "NAME": "Noelle"
 	},
-	"animatorbeta:Oz":
+	"animatorbeta:RaidenShogun":
 	{
-	  "DESCRIPTION": "Gain 1 Orb Slot. || The first time you play a LV2 <B> or <D> card each turn: Randomly Channel 1 [Lightning] or [Dark].",
-	  "EXTENDED_DESCRIPTION": ["The first #b{0} LV.2 #yBlue or LV.2 #yDark card(s) played this turn will also randomly Channel 1 #yLightning or #yDark. You have played #b{1} LV.2 #yBlue and LV.2 #yDark card(s)."],
-	  "NAME": "Oz"
-	},
-	"animatorbeta:RaidenEi":
-	{
-	  "DESCRIPTION": "Set your HP to [C] times !S!. You cannot no longer die from damage. || Die at the end of your !M!th turn (This effect cannot be prevented).",
-	  "NAME": "Raiden Ei"
+	  "DESCRIPTION": "Whenever you Evoke [Lightning] or [Dark]: Gain !M! [C]. || At the start of turn: ALL [Lightning] and [Dark] gain [Focus] equal to [C].",
+	  "EXTENDED_DESCRIPTION": ["[Lightning] and [Dark] give #b{0} [C] when Evoked. NL At the start of turn: ALL [Lightning] and [Dark] gain [Focus] equal to [C]."],
+	  "NAME": "Raiden Shogun"
 	},
 	"animatorbeta:Sayu":
 	{
@@ -500,7 +521,7 @@
 	},
 	"animatorbeta:Tartaglia":
 	{
-	  "DESCRIPTION": "Deal !M! more damage for each stack of [Burning] on any character, then remove [Burning] from ALL characters. || <LIM>. If Fatal: Enter <FS> and add {Delusion} to your draw pile.",
+	  "DESCRIPTION": "Deal !M! additional damage for each character with [Burning]. Remove [Burning] from ALL characters. || <LIM>. If Fatal: Enter <FS> and add {Delusion} to your draw pile.",
 	  "NAME": "Tartaglia"
 	},
 	"animatorbeta:Traveler_Aether":
