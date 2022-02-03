@@ -2,11 +2,12 @@ package eatyourbeets.cards.animatorbeta.curse;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.AnimatorBetaCard_Curse;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.powers.animatorbeta.SelfImmolationPower;
 import eatyourbeets.utilities.GameActions;
 
-public class Curse_Eclipse extends AnimatorCard_Curse
+public class Curse_Eclipse extends AnimatorBetaCard_Curse
 {
     public static final EYBCardData DATA = Register(Curse_Eclipse.class)
             .SetCurse(-2, EYBCardTarget.None, false);
@@ -19,19 +20,12 @@ public class Curse_Eclipse extends AnimatorCard_Curse
     }
 
     @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.DealDamageAtEndOfTurn(player,player,magicNumber);
-        GameActions.Bottom.StackPower(new SelfImmolationPower(player, 1));
-
-        GameActions.Bottom.Flash(this);
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        if (dontTriggerOnUseCard)
+        {
+            GameActions.Bottom.StackPower(new SelfImmolationPower(player, magicNumber, true));
+        }
     }
 
 }

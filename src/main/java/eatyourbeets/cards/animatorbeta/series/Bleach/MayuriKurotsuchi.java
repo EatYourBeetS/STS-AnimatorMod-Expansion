@@ -4,10 +4,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.cards.base.EYBCardTooltip;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.affinity.AgilityPower;
 import eatyourbeets.powers.affinity.CorruptionPower;
 import eatyourbeets.powers.affinity.ForcePower;
@@ -36,10 +34,7 @@ public class MayuriKurotsuchi extends AnimatorBetaCard
     public void Refresh(AbstractMonster enemy) {
         super.Refresh(enemy);
 
-        int force = GameUtilities.GetPowerAmount(player, IntellectPower.POWER_ID);
-        int agility = GameUtilities.GetPowerAmount(player, CorruptionPower.POWER_ID);
-
-        GameUtilities.IncreaseMagicNumber(this, force + agility, true);
+        GameUtilities.IncreaseMagicNumber(this, CombatStats.Affinities.GetPowerAmount(Affinity.Blue) + CombatStats.Affinities.GetPowerAmount(Affinity.Dark) , true);
     }
 
     @Override

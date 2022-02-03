@@ -32,7 +32,7 @@ public class JotaroKujo extends AnimatorBetaCard
 
         Initialize(0, 18, 1, 0);
 
-        SetAffinity_Red(1,0,2);
+        SetAffinity_Red(2,0,2);
         SetAffinity_Light(1, 0, 1);
 
         SetCooldown(4, 0, this::OnCooldownCompleted);

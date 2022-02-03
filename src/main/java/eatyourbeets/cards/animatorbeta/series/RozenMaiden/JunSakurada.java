@@ -79,12 +79,12 @@ public class JunSakurada extends AnimatorBetaCard
                                 for (AbstractCard card : cards) {
                                     AbstractCard copy = GameUtilities.Imitate(card);
                                     if (copy.baseDamage > 0) {
-                                        GameUtilities.IncreaseDamage(copy, amount, false);
+                                        GameUtilities.IncreaseDamage(copy, amount - 1, false);
                                     }
                                     if (copy.baseBlock > 0) {
-                                        GameUtilities.IncreaseBlock(copy, amount, false);
+                                        GameUtilities.IncreaseBlock(copy, amount - 1, false);
                                     }
-                                    GameActions.Bottom.MakeCardInHand(copy);
+                                    GameActions.Bottom.PlayCopy(copy, GameUtilities.GetRandomEnemy(true));
                                 }
                             });
             RemovePower();

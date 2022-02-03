@@ -218,6 +218,11 @@
 	  "EXTENDED_DESCRIPTION": ["Ranged Attacks on enemies with #yLock-On ignore damage reduction and remove #b1 #yLock-On."],
 	  "NAME": "Asuka Langley"
 	},
+	"animatorbeta:Curse_Eclipse":
+	{
+	  "DESCRIPTION": "At the end of turn: ** Gain !M! {Self-Immolation}.",
+	  "NAME": "Eclipse"
+	},
 	"animatorbeta:Curse_SearingBurn":
 	{
 	  "DESCRIPTION": "Unplayable. || On Exhaust: ** ALL characters take !M! damage and gain !S! [Burning].",
@@ -228,7 +233,7 @@
 	  "DESCRIPTION": "Cooldown !S!: Exhaust and Obtain {The World}. || <DRW-M>. Move any number of cards in hand to your draw pile.",
 	  "NAME": "Dio Brando"
 	},
-	"pcl:DioBrando_TheWorld":
+	"animatorbeta:DioBrando_TheWorld":
 	{
 	  "DESCRIPTION": "Gain !M! [Strength]. Stun a random enemy.",
 	  "NAME": "The World"
@@ -707,8 +712,8 @@
 	},
 	"animatorbeta:JunSakurada":
 	{
-	  "DESCRIPTION": "Obtain {Tormented}. Next turn: Imitate an Exhausted Attack and increase its damage and [Block] by !M!. || Cooldown !S!: Upgrade permanently and Purge.",
-	  "EXTENDED_DESCRIPTION": ["For the next #b{0} time(s) an upgradable card is created, upgrade it.", "For the next #b{0} time(s) an upgradable card is created, upgrade it, after that, Permanently Upgrade #yJun #ySakurada in your deck."],
+	  "DESCRIPTION": "Obtain {Tormented}. Next turn: Play an Exhausted Attack. It has !M! damage and [Block]. || Cooldown !S!: Upgrade permanently and Purge.",
+	  "EXTENDED_DESCRIPTION": ["Next turn: Play an Attack from your #yExhaust #yPile. It has +#b{0} damage and [Block].", "For the next #b{0} time(s) an upgradable card is created, upgrade it, after that, Permanently Upgrade #yJun #ySakurada in your deck."],
 	  "NAME": "Jun Sakurada"
 	},
 	"animatorbeta:Kanaria":
