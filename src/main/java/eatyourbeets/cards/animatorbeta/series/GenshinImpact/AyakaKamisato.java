@@ -30,6 +30,7 @@ public class AyakaKamisato extends AnimatorBetaCard
             .SetMaxCopies(2);
     private static final int ATTACK_TIMES = 2;
     private static final int THRESHOLD = 6;
+    protected boolean checkCache;
 
     public AyakaKamisato() {
         super(DATA);
@@ -53,30 +54,35 @@ public class AyakaKamisato extends AnimatorBetaCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
 
-        if (CheckSpecialCondition(true) && CombatStats.TryActivateLimited(cardID))
-        {
-            final ArrayList<AbstractCard> choices = new ArrayList<>();
-            choices.addAll(JUtils.Filter(player.hand.group, c -> c.block > 0));
-            choices.addAll(JUtils.Filter(player.discardPile.group, c -> c.block > 0));
-            choices.addAll(JUtils.Filter(player.drawPile.group, c -> c.block > 0));
-
-            AbstractCard maxBlockCard = JUtils.FindMax(choices, c -> c.block);
-            if (maxBlockCard != null) {
-                GameActions.Top.PlayCard(maxBlockCard, m);
-            }
-        }
-
         for (int i = 0; i < ATTACK_TIMES; i++)
         {
             GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.NONE)
                     .SetDamageEffect(c -> GameEffects.List.Add(VFX.Clash(c.hb)).SetColors(Color.TEAL, Color.LIGHT_GRAY, Color.SKY, Color.BLUE).duration * 0.1f);
         }
+
+
+        checkCache = CheckSpecialCondition(true);
+        int damageAmount = checkCache ? player.currentHealth + player.currentBlock + GameUtilities.GetTempHP() - 1 : secondaryValue;
         GameActions.Bottom.StackPower(new SelfImmolationPower(p, magicNumber));
-        GameActions.Bottom.TakeDamage(secondaryValue, AttackEffects.CLAW);
+        GameActions.Bottom.TakeDamage(damageAmount, AttackEffects.CLAW);
+    }
+
+    @Override
+    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
+        if (checkCache) {
+            GameActions.Bottom.PlayFromPile(name, 1, m, p.hand)
+                    .SetOptions(false, false)
+                    .SetFilter(c -> c.type == CardType.ATTACK)
+                    .AddCallback(cards -> {
+                        for (AbstractCard c : cards) {
+                            GameActions.Last.Exhaust(c);
+                        }
+                    });
+        }
     }
 
     @Override
     public boolean CheckSpecialCondition(boolean tryUse){
-        return player.currentHealth + player.currentBlock + GameUtilities.GetTempHP() < secondaryValue;
+        return player.currentHealth + player.currentBlock + GameUtilities.GetTempHP() <= secondaryValue && tryUse ? CombatStats.TryActivateLimited(cardID) : CombatStats.CanActivateLimited(cardID);
     }
 }

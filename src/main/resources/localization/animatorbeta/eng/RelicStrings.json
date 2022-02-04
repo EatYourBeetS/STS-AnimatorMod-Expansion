@@ -1,5 +1,11 @@
 
 {
+  "animatorbeta:Mistletoe":
+  {
+	"DESCRIPTIONS": ["Whenever you change #yStances, #yScry #b{0} and draw #b{1} card."],
+	"FLAVOR": "A hundred year old plant familiar, holding the knowledge of Druids passed down by generations.",
+	"NAME": "Mistletoe"
+  },
   "animatorbeta:PurpleTeddyBear":
   {
 	"DESCRIPTIONS": ["At the start of each combat, shuffle 3 0-Cost, upgraded Shido Itsukas into your deck."],

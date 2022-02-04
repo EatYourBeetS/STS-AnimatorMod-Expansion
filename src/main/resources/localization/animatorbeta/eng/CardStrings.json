@@ -418,7 +418,7 @@
 	},
 	"animatorbeta:AyakaKamisato":
 	{
-	  "DESCRIPTION": "Take !S! damage. Gain !M! {Self-Immolation}. || <LIM>. If this effect would kill you: Play and purge a random [Block] card in play first.",
+	  "DESCRIPTION": "Take !S! damage. Gain !M! {Self-Immolation}. || <LIM>. If this would kill you: Survive with 1 HP, then play and Exhaust an Attack in hand.",
 	  "NAME": "Ayaka Kamisato"
 	},
 	"animatorbeta:BarbaraPegg":
