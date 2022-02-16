@@ -1,10 +1,7 @@
 package eatyourbeets.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.EYBBetaCardData;
-import eatyourbeets.cards.base.EYBCard;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.BetaResources;
@@ -18,11 +15,15 @@ public abstract class AnimatorBetaCard extends AnimatorCard
     protected static final Logger logger = LogManager.getLogger(AnimatorCard.class.getName());
 
     public static EYBCardData RegisterCardData(Class<? extends EYBCard> type, String cardID) {
-        return RegisterCardData(new EYBBetaCardData(type, cardID));
+        return EYBCard.RegisterCardData(type, cardID);
     }
 
     protected static EYBCardData Register(Class<? extends AnimatorCard> type) {
         return RegisterCardData(type, BetaResources.Beta.CreateID(type.getSimpleName())).SetColor(GR.Animator.CardColor);
+    }
+
+    protected static EYBCardData RegisterSeriesCard(Class<? extends AnimatorCard> type) {
+        return RegisterCardData(type, BetaResources.Beta.CreateID(type.getSimpleName())).SetColor(GR.Animator.CardColor).SetSeries(GetSeriesFromClassPackage(type));
     }
 
     protected AnimatorBetaCard(EYBCardData cardData)
@@ -69,4 +70,9 @@ public abstract class AnimatorBetaCard extends AnimatorCard
         return super.HasDirectSynergy(other);
     }
 
+    public static CardSeries GetSeriesFromClassPackage(Class<? extends EYBCard> type) {
+        int length = "eatyourbeets.cards.animatorbeta.".length();
+        String name = type.getPackage().getName();
+        return CardSeries.GetByName(name.substring(length + ("series.").length()), false);
+    }
 }

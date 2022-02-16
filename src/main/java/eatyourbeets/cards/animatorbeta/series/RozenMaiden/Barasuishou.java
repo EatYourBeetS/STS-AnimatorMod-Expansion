@@ -4,19 +4,17 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.JUtils;
-import eatyourbeets.utilities.TargetHelper;
 
 public class Barasuishou extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Barasuishou.class)
-    		.SetAttack(1, AbstractCard.CardRarity.UNCOMMON, EYBAttackType.Elemental, eatyourbeets.cards.base.EYBCardTarget.ALL).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Barasuishou.class)
+    		.SetAttack(1, AbstractCard.CardRarity.UNCOMMON, EYBAttackType.Elemental, eatyourbeets.cards.base.EYBCardTarget.ALL);
 
     public Barasuishou()
     {

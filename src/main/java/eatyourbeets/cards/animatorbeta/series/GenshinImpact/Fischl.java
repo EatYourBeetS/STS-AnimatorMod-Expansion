@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.animatorbeta.special.Fischl_Oz;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
@@ -16,7 +15,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class Fischl extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Fischl.class).SetAttack(0, CardRarity.UNCOMMON, EYBAttackType.Elemental).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(Fischl.class).SetAttack(0, CardRarity.UNCOMMON, EYBAttackType.Elemental)
             .PostInitialize(data -> data.AddPreview(new Fischl_Oz(), false));
 
     public Fischl() {

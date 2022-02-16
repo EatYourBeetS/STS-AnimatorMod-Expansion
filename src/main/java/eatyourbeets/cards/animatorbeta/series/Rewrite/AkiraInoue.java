@@ -4,11 +4,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.stances.CorruptionStance;
 import eatyourbeets.stances.ForceStance;
@@ -17,7 +15,7 @@ import eatyourbeets.utilities.*;
 
 public class AkiraInoue extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(AkiraInoue.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Self).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(AkiraInoue.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Self);
 
     public AkiraInoue()
     {

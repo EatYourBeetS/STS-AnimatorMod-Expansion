@@ -1,6 +1,5 @@
 package eatyourbeets.cards.animatorbeta.series.Rewrite;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.AbstractStance;
@@ -16,17 +15,15 @@ import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
 import eatyourbeets.cards.genericEffects.GenericEffect_EnterStance;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.stances.AgilityStance;
-import eatyourbeets.stances.EYBStance;
 import eatyourbeets.stances.ForceStance;
 import eatyourbeets.stances.IntellectStance;
 import eatyourbeets.utilities.BetaGameUtilities;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class KotarouTennouji extends AnimatorBetaCard implements OnStanceChangedSubscriber, OnStartOfTurnPostDrawSubscriber
 {
-    public static final EYBCardData DATA = Register(KotarouTennouji.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Normal).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(KotarouTennouji.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Normal);
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 

@@ -10,12 +10,11 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.CombatStats;
-import eatyourbeets.stances.IntellectStance;
 import eatyourbeets.utilities.GameActions;
 
 public class RukiaKuchiki extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(RukiaKuchiki.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(RukiaKuchiki.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .PostInitialize(data -> data.AddPreview(new RukiaBankai(), false));
 
     public RukiaKuchiki()

@@ -7,8 +7,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.animator.series.GATE.YaoHaDucy;
-import eatyourbeets.cards.animator.series.GoblinSlayer.Witch;
 import eatyourbeets.cards.animator.special.OrbCore_Frost;
 import eatyourbeets.cards.animator.tokens.AffinityToken_Blue;
 import eatyourbeets.cards.base.*;
@@ -21,7 +19,7 @@ import java.util.ArrayList;
 
 public class ShidoItsuka extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(ShidoItsuka.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(ShidoItsuka.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None);
 
     protected final static ArrayList<AbstractCard> dateALiveCards = new ArrayList<>();
     protected final static ArrayList<AbstractCard> otherSynergicCards = new ArrayList<>();

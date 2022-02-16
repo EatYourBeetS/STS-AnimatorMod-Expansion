@@ -2,7 +2,7 @@ package eatyourbeets.cards.animatorbeta.curse;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.AnimatorBetaCard_Curse;
+import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.animator.tokens.AffinityToken_Green;
 import eatyourbeets.cards.base.*;
@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 
 import static eatyourbeets.resources.BetaResources.Enums.CardTags.AUTOPLAY;
 
-public class Curse_Delusion extends AnimatorBetaCard_Curse
+public class Curse_Delusion extends AnimatorBetaCard
 {
     public static final EYBCardData DATA = Register(Curse_Delusion.class)
             .SetCurse(-2, EYBCardTarget.None, false).SetSeries(CardSeries.GenshinImpact)
@@ -19,8 +19,9 @@ public class Curse_Delusion extends AnimatorBetaCard_Curse
 
     public Curse_Delusion()
     {
-        super(DATA, true);
+        super(DATA);
         SetAffinity_Dark(1);
+        playAtEndOfTurn = true;
     }
 
     @Override

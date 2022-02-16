@@ -17,7 +17,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class ByakuyaKuchiki extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(ByakuyaKuchiki.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Piercing).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(ByakuyaKuchiki.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Piercing)
             .PostInitialize(data -> data.AddPreview(new ByakuyaBankai(), false));
 
 
@@ -54,7 +54,7 @@ public class ByakuyaKuchiki extends AnimatorBetaCard
         Execute(choices, m);
     }
 
-    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<AnimatorCard, AbstractPlayer, AbstractMonster> onUseAction) {
+    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onUseAction) {
         AnimatorCardBuilder builder = new AnimatorCardBuilder(ByakuyaKuchiki.DATA.ID);
         builder.SetText(name, "", "");
         builder.SetProperties(type, GR.Enums.Cards.THE_ANIMATOR, AbstractCard.CardRarity.RARE, CardTarget.ENEMY);

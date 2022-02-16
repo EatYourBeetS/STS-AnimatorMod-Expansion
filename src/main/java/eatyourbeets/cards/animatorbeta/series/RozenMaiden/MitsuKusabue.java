@@ -15,8 +15,8 @@ import eatyourbeets.utilities.GameUtilities;
 public class MitsuKusabue extends AnimatorBetaCard
 {
     public static final EYBCardData DATA =
-            Register(MitsuKusabue.class)
-                    .SetSkill(1, AbstractCard.CardRarity.COMMON, EYBCardTarget.None).SetSeriesFromClassPackage();
+            RegisterSeriesCard(MitsuKusabue.class)
+                    .SetSkill(1, AbstractCard.CardRarity.COMMON, EYBCardTarget.None);
 
     public MitsuKusabue() {
         super(DATA);

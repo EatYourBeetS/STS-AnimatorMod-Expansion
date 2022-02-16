@@ -14,7 +14,7 @@ import eatyourbeets.utilities.JUtils;
 
 public class BarbaraPegg extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(BarbaraPegg.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(BarbaraPegg.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None);
 
     public BarbaraPegg()
     {

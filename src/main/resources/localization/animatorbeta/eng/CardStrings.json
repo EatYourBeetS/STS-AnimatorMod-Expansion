@@ -277,9 +277,10 @@
 	},
 	"animatorbeta:NaoTomori":
 	{
-	  "DESCRIPTION": "Transform a {Power} or {Status} in your hand into a {Normality} to gain {Phasing}. || When Exhausted: Choose 1 of !M! cards to obtain.",
+	  "DESCRIPTION": "Transform a {Power} or {Status} in hand into {Normality} to gain {Phasing}. || When Exhausted: Obtain 1 of !M! cards that cost 1 less this turn.",
 	  "EXTENDED_DESCRIPTION": ["transform into a Normality."],
-	  "NAME": "Nao Tomori"
+	  "NAME": "Nao Tomori",
+	  "UPGRADE_DESCRIPTION": "Transform a {Power} or {Hindrance} in hand into {Normality} to gain {Phasing}. || When Exhausted: Obtain 1 of !M! cards that cost 1 less this combat."
 	},
 	"animatorbeta:Senku":
 	{
@@ -289,12 +290,12 @@
 	},
 	"animatorbeta:SpikeSpiegel":
 	{
-	  "DESCRIPTION": "Play !M! random Strikes from your Draw Pile. || <LIM>. !A! <W>: ** Shuffle {Swordfish II} ** into your Draw Pile.",
+	  "DESCRIPTION": "Play !M! Strikes in your Draw Pile. Lower their cost by 1. || <LIM>. !S!+ types of cards in hand: Add {Swordfish II} to your Discard Pile.",
 	  "NAME": "Spike Spiegel"
 	},
 	"animatorbeta:SwordfishII":
 	{
-	  "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies for each Strike played this turn. || When Discarded or Played, Motivate 1.",
+	  "DESCRIPTION": "{Autoplay}. At the end of your turn, deal !M! damage to ALL enemies for each Strike played this turn. || When Discarded or Played, Motivate 1.",
 	  "NAME": "Swordfish II"
 	}
   },
@@ -312,13 +313,13 @@
 	},
 	"animatorbeta:InverseOrigami":
 	{
-	  "DESCRIPTION": "Play an {Orb Core}. The next !M! Orbs Evoked activate your [Support Damage]. || Pay !S! [Support Damage] to trigger !M! random Orbs and increase this power's duration by 1.",
+	  "DESCRIPTION": "{Autoplay}. Play an {Orb Core}. The next !M! Orbs Evoked activate your [Support Damage]. || Pay !S! [Support Damage] to trigger !M! random Orbs and increase this power's duration by 1.",
 	  "EXTENDED_DESCRIPTION": ["The next #b{0} Orb(s) Evoked activate your #ySupport #yDamage. Pay #b{1} #ySupport #yDamage to trigger #b{2} random #yOrbs and increase this power's duration by 1."],
 	  "NAME": "Inverse Origami"
 	},
 	"animatorbeta:InverseTohka":
 	{
-	  "DESCRIPTION": "When Drawn: Spend [E] to {Motivate} !S! cards with this card's series anywhere. || Deals !M! more damage for every Synergy made this combat.",
+	  "DESCRIPTION": "{Autoplay}. When Drawn: Spend [E] to {Motivate} !S! cards with this card's series anywhere. || Deals !M! more damage for every Synergy made this combat.",
 	  "NAME": "Inverse Tohka"
 	},
 	"animatorbeta:KotoriItsuka":
@@ -328,7 +329,7 @@
 	},
 	"animatorbeta:KurumiTokisaki":
 	{
-	  "DESCRIPTION": "Give up to !M! cards in your hand {~Delayed}. Gain [E] next turn for each. || Cooldown !S!: Purge. Duplicate a {~Delayed} card in your draw or discard pile. It costs 1 less and has {Autoplay}.",
+	  "DESCRIPTION": "{Autoplay}. Give up to !M! cards in your hand {~Delayed}. Gain [E] next turn for each. || Cooldown !S!: Purge. Duplicate a {~Delayed} card in your draw or discard pile. It costs 1 less and has {Autoplay}.",
 	  "EXTENDED_DESCRIPTION": ["give Delayed."],
 	  "NAME": "Kurumi Tokisaki"
 	},
@@ -469,7 +470,7 @@
 	},
 	"animatorbeta:JumpyDumpty":
 	{
-	  "DESCRIPTION": "Channel 1 [Fire]. || If Fatal or if the enemy loses its [Block]: Gain !S! [Burning] and add a copy of this card to your Draw Pile.",
+	  "DESCRIPTION": "{Autoplay}. Channel 1 [Fire]. || If Fatal or if the enemy loses its [Block]: Gain !S! [Burning] and add a copy of this card to your Draw Pile.",
 	  "NAME": "Jumpy Dumpty"
 	},
 	"animatorbeta:KaeyaAlberich":

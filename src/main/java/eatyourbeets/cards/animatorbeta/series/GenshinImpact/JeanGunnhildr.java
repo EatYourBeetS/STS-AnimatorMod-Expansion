@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
@@ -16,7 +15,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class JeanGunnhildr extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(JeanGunnhildr.class).SetAttack(1, CardRarity.RARE).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(JeanGunnhildr.class).SetAttack(1, CardRarity.RARE);
 
     public JeanGunnhildr()
     {

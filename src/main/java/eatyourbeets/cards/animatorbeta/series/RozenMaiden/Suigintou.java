@@ -1,7 +1,6 @@
 package eatyourbeets.cards.animatorbeta.series.RozenMaiden;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -13,15 +12,14 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class Suigintou extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Suigintou.class)
-    		.SetAttack(2, AbstractCard.CardRarity.RARE, EYBAttackType.Elemental).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(Suigintou.class)
+    		.SetAttack(2, AbstractCard.CardRarity.RARE, EYBAttackType.Elemental)
             .PostInitialize(data -> data.AddPreview(new Suigintou_BlackFeather(), false));
     
     public Suigintou()

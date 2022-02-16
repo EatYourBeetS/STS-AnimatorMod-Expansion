@@ -16,7 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class YasutoraSado extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(YasutoraSado.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(YasutoraSado.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal);
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 

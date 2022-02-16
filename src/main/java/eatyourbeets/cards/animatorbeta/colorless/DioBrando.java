@@ -2,19 +2,15 @@ package eatyourbeets.cards.animatorbeta.colorless;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.animator.series.NoGameNoLife.DolaStephanie;
 import eatyourbeets.cards.animatorbeta.special.DioBrando_TheWorld;
-import eatyourbeets.cards.animatorbeta.special.JotaroKujo_StarPlatinum;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class DioBrando extends AnimatorBetaCard
 {
@@ -29,8 +25,8 @@ public class DioBrando extends AnimatorBetaCard
     {
         super(DATA);
 
-        Initialize(19, 0, 2, 1);
-        SetUpgrade(4, 0, 0, 0);
+        Initialize(19, 0, 2);
+        SetUpgrade(4, 0, 0);
 
         SetAffinity_Red(2,0,2);
         SetAffinity_Dark(1, 0, 1);
@@ -59,7 +55,7 @@ public class DioBrando extends AnimatorBetaCard
                         {
                             GameActions.Top.MoveCard(cards.get(i), player.hand, player.drawPile);
                         }
-                        GameActions.Top.GainTemporaryHP(secondaryValue * cards.size());
+                        GameActions.Top.GainTemporaryHP(cards.size());
                     });
         });
 

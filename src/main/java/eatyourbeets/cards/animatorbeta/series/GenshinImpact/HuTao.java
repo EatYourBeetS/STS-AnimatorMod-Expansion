@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.animatorbeta.curse.Curse_SearingBurn;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
@@ -16,7 +15,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class HuTao extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(HuTao.class).SetAttack(3, CardRarity.UNCOMMON, EYBAttackType.Piercing).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(HuTao.class).SetAttack(3, CardRarity.UNCOMMON, EYBAttackType.Piercing)
             .SetMaxCopies(2)
             .PostInitialize(data -> data.AddPreview(new Curse_SearingBurn(), false));
 

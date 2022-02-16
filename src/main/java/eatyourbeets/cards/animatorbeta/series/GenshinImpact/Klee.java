@@ -3,20 +3,15 @@ package eatyourbeets.cards.animatorbeta.series.GenshinImpact;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.animator.series.FullmetalAlchemist.RoyMustang;
 import eatyourbeets.cards.animatorbeta.special.JumpyDumpty;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.orbs.animator.Fire;
-import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.powers.common.BurningPower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.TargetHelper;
 
 public class Klee extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Klee.class).SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(Klee.class).SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .PostInitialize(data -> data.AddPreview(new JumpyDumpty(), false));
 
     public Klee()

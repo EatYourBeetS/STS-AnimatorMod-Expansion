@@ -65,7 +65,7 @@ public class ByakuyaBankai extends AnimatorBetaCard
         Execute(choices, m);
     }
 
-    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<AnimatorCard, AbstractPlayer, AbstractMonster> onUseAction) {
+    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onUseAction) {
         AnimatorCardBuilder builder = new AnimatorCardBuilder(ByakuyaBankai.DATA.ID);
         builder.SetText(name, "", "");
         builder.SetProperties(type, GR.Enums.Cards.THE_ANIMATOR, AbstractCard.CardRarity.RARE, CardTarget.ENEMY);

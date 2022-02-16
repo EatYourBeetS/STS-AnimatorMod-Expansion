@@ -3,7 +3,6 @@ package eatyourbeets.cards.animatorbeta.series.GenshinImpact;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
@@ -13,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class Amber extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Amber.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Ranged).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Amber.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Ranged);
 
     public Amber() {
         super(DATA);

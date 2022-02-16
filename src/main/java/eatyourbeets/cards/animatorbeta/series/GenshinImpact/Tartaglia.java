@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Tartaglia extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Tartaglia.class).SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.ALL).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(Tartaglia.class).SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.ALL)
             .PostInitialize(data -> data.AddPreview(new Curse_Delusion(), false));
 
     public Tartaglia() {

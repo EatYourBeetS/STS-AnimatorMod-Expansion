@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class KanameTousen extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(KanameTousen.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.ALL).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(KanameTousen.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.ALL);
 
     public KanameTousen() {
         super(DATA);

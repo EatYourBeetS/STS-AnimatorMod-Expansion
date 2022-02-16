@@ -5,18 +5,16 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class LaplacesDemon extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(LaplacesDemon.class)
-    		.SetSkill(2, CardRarity.RARE, EYBCardTarget.None).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(LaplacesDemon.class)
+    		.SetSkill(2, CardRarity.RARE, EYBCardTarget.None);
 
     public LaplacesDemon()
     {

@@ -19,7 +19,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class AkaneSenri extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(AkaneSenri.class).SetPower(3, CardRarity.RARE).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(AkaneSenri.class).SetPower(3, CardRarity.RARE);
 
     public AkaneSenri()
     {

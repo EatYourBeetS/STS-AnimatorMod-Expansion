@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class SougenEsaka extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(SougenEsaka.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(SougenEsaka.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL);
 
     public SougenEsaka()
     {

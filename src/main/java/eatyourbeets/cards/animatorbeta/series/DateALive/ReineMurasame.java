@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -15,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class ReineMurasame extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(ReineMurasame.class).SetSkill(-1, CardRarity.UNCOMMON, EYBCardTarget.None).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(ReineMurasame.class).SetSkill(-1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .PostInitialize(data -> data.AddPreview(new ShidoItsuka(), false));
 
     public ReineMurasame()

@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
@@ -17,7 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class YamaiSisters extends AnimatorBetaCard implements OnSynergySubscriber
 {
-    public static final EYBCardData DATA = Register(YamaiSisters.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(YamaiSisters.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal);
 
     public YamaiSisters()
     {

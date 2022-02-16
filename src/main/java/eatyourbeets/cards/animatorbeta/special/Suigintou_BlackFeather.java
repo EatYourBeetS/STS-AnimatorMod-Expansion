@@ -4,9 +4,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.AnimatorBetaCard_Curse;
+import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.animatorbeta.series.RozenMaiden.Suigintou;
-import eatyourbeets.cards.base.AnimatorCard_Curse;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -16,7 +15,7 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class Suigintou_BlackFeather extends AnimatorBetaCard_Curse implements OnStartOfTurnPostDrawSubscriber
+public class Suigintou_BlackFeather extends AnimatorBetaCard implements OnStartOfTurnPostDrawSubscriber
 {
     public static final EYBCardData DATA = Register(Suigintou_BlackFeather.class)
     		.SetCurse(0, eatyourbeets.cards.base.EYBCardTarget.None, true)
@@ -25,7 +24,7 @@ public class Suigintou_BlackFeather extends AnimatorBetaCard_Curse implements On
 
     public Suigintou_BlackFeather()
     {
-        super(DATA, false);
+        super(DATA);
 
         Initialize(0, 0, 2, 5);
         SetUpgrade(0, 0, 0);

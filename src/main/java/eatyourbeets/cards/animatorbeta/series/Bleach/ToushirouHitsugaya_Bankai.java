@@ -22,7 +22,7 @@ import eatyourbeets.utilities.GameEffects;
 
 public class ToushirouHitsugaya_Bankai extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(ToushirouHitsugaya_Bankai.class).SetAttack(1, CardRarity.SPECIAL, EYBAttackType.Elemental, EYBCardTarget.ALL).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(ToushirouHitsugaya_Bankai.class).SetAttack(1, CardRarity.SPECIAL, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .PostInitialize(data -> {
                 data.AddPreview(new Status_Wound(), false);
             });

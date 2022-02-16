@@ -10,16 +10,15 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.animatorbeta.SorceryPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.TargetHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Natsumi extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Natsumi.class)
+    public static final EYBCardData DATA = RegisterSeriesCard(Natsumi.class)
             .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.Random)
-            .SetSeriesFromClassPackage();
+            ;
 
     private static HashMap<Integer, ArrayList<AbstractCard>> cardPool;
 

@@ -3,6 +3,7 @@ package eatyourbeets.cards.genericEffects;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardTooltip;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect;
 import eatyourbeets.resources.GR;
@@ -36,7 +37,7 @@ public class GenericEffect_EnterStance extends GenericEffect
     }
 
     @Override
-    public void Use(AnimatorCard card, AbstractPlayer p, AbstractMonster m)
+    public void Use(EYBCard card, AbstractPlayer p, AbstractMonster m)
     {
         GameActions.Bottom.ChangeStance(id);
     }

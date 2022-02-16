@@ -19,8 +19,8 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Kanaria extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Kanaria.class)
-    		.SetPower(2, AbstractCard.CardRarity.RARE).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(Kanaria.class)
+    		.SetPower(2, AbstractCard.CardRarity.RARE)
             .PostInitialize(data -> data.AddPreview(new Kanaria_Pizzicato(), false));
     public static final int COST = 2;
 

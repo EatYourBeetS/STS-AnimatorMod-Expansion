@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -15,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Noelle extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Noelle.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Self).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Noelle.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Self);
 
     public Noelle()
     {

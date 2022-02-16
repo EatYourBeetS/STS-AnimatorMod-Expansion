@@ -20,7 +20,7 @@ import eatyourbeets.utilities.RandomizedList;
 
 public class SajinKomamura extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(SajinKomamura.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(SajinKomamura.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None);
 
     public SajinKomamura()
     {

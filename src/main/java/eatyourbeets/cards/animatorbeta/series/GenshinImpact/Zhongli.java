@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import eatyourbeets.actions.orbs.TriggerOrbPassiveAbility;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardEffectChoice;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -19,7 +18,7 @@ import eatyourbeets.utilities.JUtils;
 
 public class Zhongli extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Zhongli.class).SetPower(3, CardRarity.RARE).SetMaxCopies(2).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Zhongli.class).SetPower(3, CardRarity.RARE).SetMaxCopies(2);
     private static final int POWER_ENERGY_COST = 2;
     private static final int TRIGGER_LIMIT = 3;
 

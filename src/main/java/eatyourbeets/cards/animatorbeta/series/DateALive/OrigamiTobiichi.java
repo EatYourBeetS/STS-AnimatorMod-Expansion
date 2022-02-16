@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.animatorbeta.special.InverseOrigami;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
@@ -14,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class OrigamiTobiichi extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(OrigamiTobiichi.class).SetPower(2, CardRarity.RARE).SetMaxCopies(2).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(OrigamiTobiichi.class).SetPower(2, CardRarity.RARE).SetMaxCopies(2)
             .PostInitialize(data -> data.AddPreview(new InverseOrigami(), false));
 
     public OrigamiTobiichi()

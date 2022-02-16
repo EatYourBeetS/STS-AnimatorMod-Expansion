@@ -6,17 +6,13 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.powers.CombatStats;
-import eatyourbeets.powers.affinity.AgilityPower;
-import eatyourbeets.powers.affinity.CorruptionPower;
-import eatyourbeets.powers.affinity.ForcePower;
-import eatyourbeets.powers.affinity.IntellectPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 public class MayuriKurotsuchi extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(MayuriKurotsuchi.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Normal).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(MayuriKurotsuchi.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Normal);
     public static final int POISON_THRESHOLD = 12;
 
 

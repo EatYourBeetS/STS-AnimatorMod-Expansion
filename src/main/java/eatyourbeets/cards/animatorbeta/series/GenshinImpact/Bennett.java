@@ -7,11 +7,10 @@ import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Bennett extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Bennett.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Bennett.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal);
 
     public Bennett() {
         super(DATA);

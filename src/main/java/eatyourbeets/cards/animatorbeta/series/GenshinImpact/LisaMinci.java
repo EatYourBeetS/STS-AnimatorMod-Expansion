@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -14,7 +13,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class LisaMinci extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(LisaMinci.class).SetSkill(2, CardRarity.COMMON, EYBCardTarget.Self).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(LisaMinci.class).SetSkill(2, CardRarity.COMMON, EYBCardTarget.Self);
 
     public LisaMinci() {
         super(DATA);

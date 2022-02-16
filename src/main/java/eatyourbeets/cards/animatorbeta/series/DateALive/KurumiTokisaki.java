@@ -19,7 +19,7 @@ import static eatyourbeets.resources.BetaResources.Enums.CardTags.AUTOPLAY;
 
 public class KurumiTokisaki extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(KurumiTokisaki.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.ALL).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(KurumiTokisaki.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.ALL);
 
     public KurumiTokisaki()
     {

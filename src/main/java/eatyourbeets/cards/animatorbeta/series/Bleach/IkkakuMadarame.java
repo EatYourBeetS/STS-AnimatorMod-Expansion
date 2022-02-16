@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
+import eatyourbeets.cards.animatorbeta.special.ByakuyaBankai;
 import eatyourbeets.cards.animatorbeta.special.IkkakuBankai;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
@@ -18,12 +19,10 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class IkkakuMadarame extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(IkkakuMadarame.class).SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL).SetSeriesFromClassPackage();
-    static
-    {
-        DATA.AddPreview(new ZarakiKenpachi(), false);
-        DATA.AddPreview(new IkkakuBankai(), false);
-    }
+    public static final EYBCardData DATA = RegisterSeriesCard(IkkakuMadarame.class)
+            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
+            .PostInitialize(
+                    data -> data.AddPreview(new ZarakiKenpachi(), false).AddPreview(new IkkakuBankai(), false));
 
     public IkkakuMadarame()
     {

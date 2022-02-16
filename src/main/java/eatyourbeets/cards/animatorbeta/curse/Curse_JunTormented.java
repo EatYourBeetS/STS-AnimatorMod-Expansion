@@ -1,13 +1,10 @@
 package eatyourbeets.cards.animatorbeta.curse;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.AnimatorBetaCard_Curse;
-import eatyourbeets.cards.animator.status.Status_Burn;
+import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.animator.tokens.AffinityToken_Blue;
-import eatyourbeets.cards.base.AnimatorCard_Curse;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -15,18 +12,19 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class Curse_JunTormented extends AnimatorBetaCard_Curse
+public class Curse_JunTormented extends AnimatorBetaCard
 {
     public static final EYBCardData DATA = Register(Curse_JunTormented.class)
             .SetCurse(-2, eatyourbeets.cards.base.EYBCardTarget.None, true).SetSeries(CardSeries.RozenMaiden);
 
     public Curse_JunTormented()
     {
-        super(DATA, true);
+        super(DATA);
         Initialize(0,0,2,0);
         SetAffinity_Dark(1);
         SetAffinity_Blue(1);
         SetUnplayable(true);
+        playAtEndOfTurn = true;
     }
 
     @Override

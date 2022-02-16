@@ -43,6 +43,12 @@ public class NaoTomori extends AnimatorBetaCard
             AbstractCard card = AbstractDungeon.returnTrulyRandomCardInCombat();
             if (group.findCardById(card.cardID) == null)
             {
+                if (upgraded) {
+                    GameUtilities.ModifyCostForCombat(card, -1, true);
+                }
+                else {
+                    GameUtilities.ModifyCostForTurn(card, -1, true);
+                }
                 group.addToBottom(card.makeCopy());
             }
         }
@@ -63,7 +69,7 @@ public class NaoTomori extends AnimatorBetaCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.SelectFromHand(name, 1, false)
-        .SetFilter(c -> c.type.equals(CardType.POWER) || c.type.equals(CardType.STATUS))
+                .SetFilter(c -> c.type.equals(CardType.POWER) || c.type.equals(CardType.STATUS) || (upgraded && c.type.equals(CardType.CURSE)))
         .SetOptions(false, false, false)
         .SetMessage(DATA.Strings.EXTENDED_DESCRIPTION[0])
         .AddCallback(cards ->

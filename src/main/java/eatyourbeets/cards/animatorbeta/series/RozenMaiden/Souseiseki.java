@@ -13,8 +13,8 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Souseiseki extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Souseiseki.class)
-    		.SetAttack(1, AbstractCard.CardRarity.COMMON, EYBAttackType.Normal, eatyourbeets.cards.base.EYBCardTarget.Normal).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(Souseiseki.class)
+    		.SetAttack(1, AbstractCard.CardRarity.COMMON, EYBAttackType.Normal, eatyourbeets.cards.base.EYBCardTarget.Normal)
             .PostInitialize(data -> data.AddPreview(new Suiseiseki(), false));
 
     public Souseiseki()

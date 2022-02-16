@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Mayuri extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Mayuri.class).SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.Random).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Mayuri.class).SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.Random);
 
     public Mayuri()
     {

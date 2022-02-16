@@ -13,7 +13,7 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class GinIchimaru extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(GinIchimaru.class).SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Piercing, EYBCardTarget.Random).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(GinIchimaru.class).SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Piercing, EYBCardTarget.Random);
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 

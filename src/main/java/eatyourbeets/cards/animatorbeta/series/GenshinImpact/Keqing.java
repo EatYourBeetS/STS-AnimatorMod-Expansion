@@ -1,29 +1,24 @@
 package eatyourbeets.cards.animatorbeta.series.GenshinImpact;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.interfaces.subscribers.OnEvokeOrbSubscriber;
-import eatyourbeets.orbs.animator.Aether;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.*;
 
 public class Keqing extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Keqing.class)
+    public static final EYBCardData DATA = RegisterSeriesCard(Keqing.class)
             .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Piercing)
             .SetMaxCopies(2)
-            .SetSeriesFromClassPackage();
+            ;
     public boolean canGive = true;
 
     public Keqing()

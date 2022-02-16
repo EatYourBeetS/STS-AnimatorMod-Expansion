@@ -3,7 +3,6 @@ package eatyourbeets.cards.animatorbeta.series.Rewrite;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.actions.special.RefreshHandLayout;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
@@ -13,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class ChihayaOhtori extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(ChihayaOhtori.class).SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Normal).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(ChihayaOhtori.class).SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Normal);
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 

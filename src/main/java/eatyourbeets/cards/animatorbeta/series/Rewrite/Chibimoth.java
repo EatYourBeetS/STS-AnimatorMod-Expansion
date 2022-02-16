@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.delegates.ActionT3;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.BetaActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 
 public class Chibimoth extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Chibimoth.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(Chibimoth.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
             .PostInitialize(data -> data.AddPreview(new KotoriKanbe(), false));
 
     public Chibimoth()
@@ -65,15 +66,15 @@ public class Chibimoth extends AnimatorBetaCard
         });
     }
 
-    private AnimatorCard_Dynamic CreateChoice(String text, ActionT3<AnimatorCard, AbstractPlayer, AbstractMonster> onSelect)
+    private AnimatorCard_Dynamic CreateChoice(String text, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onSelect)
     {
-        return new AnimatorCardBuilder(cardID)
+        return ((AnimatorCardBuilder) new AnimatorCardBuilder(cardID)
         .SetImagePath(assetUrl)
-        .SetProperties(CardType.SKILL, rarity, CardTarget.NONE)
+        .SetProperties(CardType.SKILL, GR.Enums.Cards.THE_ANIMATOR, rarity, CardTarget.NONE)
         .SetCost(-2, 0)
         .SetNumbers(0,0,magicNumber,secondaryValue)
         .SetOnUse(onSelect)
-        .SetText(name, text, text).Build();
+        .SetText(name, text, text)).Build();
     }
 
     private boolean DrawKotoriKanbe(CardGroup group)

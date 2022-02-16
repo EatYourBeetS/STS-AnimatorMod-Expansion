@@ -15,7 +15,7 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class ToushirouHitsugaya extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(ToushirouHitsugaya.class).SetAttack(1, CardRarity.RARE, EYBAttackType.Normal).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(ToushirouHitsugaya.class).SetAttack(1, CardRarity.RARE, EYBAttackType.Normal)
             .PostInitialize(data -> data.AddPreview(new ToushirouHitsugaya_Bankai(), false));
     public static final int FREEZING_THRESHOLD = 3;
 

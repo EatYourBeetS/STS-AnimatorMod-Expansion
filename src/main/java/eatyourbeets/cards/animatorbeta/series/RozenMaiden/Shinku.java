@@ -7,14 +7,13 @@ import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Shinku extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Shinku.class)
-    		.SetAttack(1, AbstractCard.CardRarity.UNCOMMON).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Shinku.class)
+    		.SetAttack(1, AbstractCard.CardRarity.UNCOMMON);
 
     public Shinku()
     {

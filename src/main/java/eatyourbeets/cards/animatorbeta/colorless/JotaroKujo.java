@@ -1,21 +1,15 @@
 package eatyourbeets.cards.animatorbeta.colorless;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.animatorbeta.special.JotaroKujo_StarPlatinum;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.modifiers.CostModifiers;
-import eatyourbeets.utilities.BetaActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-
-import static eatyourbeets.resources.BetaResources.Enums.CardTags.AUTOPLAY;
 
 public class JotaroKujo extends AnimatorBetaCard
 {

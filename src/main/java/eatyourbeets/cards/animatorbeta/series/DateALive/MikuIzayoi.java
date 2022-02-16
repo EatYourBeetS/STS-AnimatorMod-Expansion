@@ -12,7 +12,7 @@ import eatyourbeets.utilities.JUtils;
 
 public class MikuIzayoi extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(MikuIzayoi.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(MikuIzayoi.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None);
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 

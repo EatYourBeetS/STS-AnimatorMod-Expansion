@@ -2,18 +2,12 @@ package eatyourbeets.cards.animatorbeta.special;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Frost;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.TargetHelper;
-
-import java.util.ArrayList;
 
 public class JotaroKujo_StarPlatinum extends AnimatorBetaCard
 {

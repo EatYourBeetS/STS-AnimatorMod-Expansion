@@ -4,10 +4,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
-import eatyourbeets.cards.animator.series.GoblinSlayer.Spearman;
 import eatyourbeets.cards.animator.status.Status_Slimed;
 import eatyourbeets.cards.base.Affinity;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
@@ -16,9 +14,9 @@ import eatyourbeets.utilities.GameActions;
 
 public class Suiseiseki extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Suiseiseki.class)
+    public static final EYBCardData DATA = RegisterSeriesCard(Suiseiseki.class)
     		.SetSkill(1, AbstractCard.CardRarity.COMMON, eatyourbeets.cards.base.EYBCardTarget.None)
-            .SetSeriesFromClassPackage()
+            
             .PostInitialize(data -> data.AddPreview(new Status_Slimed(), false).AddPreview(new Souseiseki(), false));
 
     public Suiseiseki()

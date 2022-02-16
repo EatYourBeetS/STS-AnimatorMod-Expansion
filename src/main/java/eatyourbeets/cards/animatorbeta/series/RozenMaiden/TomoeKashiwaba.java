@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.BetaJUtils;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -14,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class TomoeKashiwaba extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(TomoeKashiwaba.class).SetSkill(1, AbstractCard.CardRarity.COMMON, eatyourbeets.cards.base.EYBCardTarget.None).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(TomoeKashiwaba.class).SetSkill(1, AbstractCard.CardRarity.COMMON, eatyourbeets.cards.base.EYBCardTarget.None);
 
     public TomoeKashiwaba()
     {

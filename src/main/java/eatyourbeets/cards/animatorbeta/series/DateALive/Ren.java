@@ -12,7 +12,7 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class Ren extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Ren.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.Normal).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Ren.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.Normal);
     public static final int THRESHOLD = 3;
 
 

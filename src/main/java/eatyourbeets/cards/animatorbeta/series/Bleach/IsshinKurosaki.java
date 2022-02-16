@@ -14,7 +14,7 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class IsshinKurosaki extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(IsshinKurosaki.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(IsshinKurosaki.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None);
     private static final CardEffectChoice choices = new CardEffectChoice();
 
     public IsshinKurosaki()

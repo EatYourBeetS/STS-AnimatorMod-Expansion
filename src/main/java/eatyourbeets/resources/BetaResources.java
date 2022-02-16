@@ -6,12 +6,14 @@ import com.badlogic.gdx.files.FileHandle;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardMetadata;
 import eatyourbeets.interfaces.delegates.ActionT2;
+import eatyourbeets.resources.animator.AnimatorStrings;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
 import eatyourbeets.resources.animatorbeta.loadouts.Loadout_Bleach;
 import eatyourbeets.resources.animatorbeta.loadouts.Loadout_Rewrite;
@@ -51,8 +53,10 @@ public class BetaResources extends AbstractResources
         return Beta != null && Beta.isLoaded;
     }
 
+    public final BetaStrings Strings = new BetaStrings();
+
     public BetaResources() {
-        super(BASE_PREFIX);
+        super(BASE_PREFIX, GR.Enums.Cards.THE_ANIMATOR, GR.Enums.Characters.THE_ANIMATOR);
     }
 
     public static boolean IsTranslationSupported(Settings.GameLanguage language)
@@ -74,7 +78,7 @@ public class BetaResources extends AbstractResources
     protected void InitializeKeywords() {
         if (!this.isLoaded) {
             JUtils.LogInfo(this, "InitializeKeywords();");
-            LoadKeywords();
+            LoadKeywords(GR.Enums.Cards.THE_ANIMATOR);
         }
     }
 
@@ -138,10 +142,10 @@ public class BetaResources extends AbstractResources
     }
 
     @Override
-    protected void LoadKeywords() {
-        super.LoadKeywords(this.GetFallbackFile("KeywordStrings.json"));
+    protected void LoadKeywords(AbstractCard.CardColor requiredColor) {
+        super.LoadKeywords(this.GetFallbackFile("KeywordStrings.json"), requiredColor);
         if (this.IsBetaTranslation() || IsTranslationSupported(Settings.language)) {
-            super.LoadKeywords(this.GetFile(Settings.language, "KeywordStrings.json"));
+            super.LoadKeywords(this.GetFile(Settings.language, "KeywordStrings.json"), requiredColor);
         }
 
     }
@@ -167,7 +171,7 @@ public class BetaResources extends AbstractResources
                 {
                     logger.info("Adding: " + s);
 
-                    LoadCustomRelic(Class.forName(s));
+                    LoadCustomRelic(Class.forName(s), GR.Enums.Cards.THE_ANIMATOR);
                 }
                 catch (ClassNotFoundException e)
                 {

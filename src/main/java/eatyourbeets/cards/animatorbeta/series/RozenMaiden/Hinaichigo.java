@@ -8,15 +8,13 @@ import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Hinaichigo extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(Hinaichigo.class)
-    		.SetSkill(1, AbstractCard.CardRarity.COMMON).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(Hinaichigo.class)
+    		.SetSkill(1, AbstractCard.CardRarity.COMMON);
 
     public Hinaichigo()
     {

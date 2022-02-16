@@ -16,8 +16,8 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class MeguKakizaki extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(MeguKakizaki.class)
-    		.SetSkill(1, AbstractCard.CardRarity.UNCOMMON, eatyourbeets.cards.base.EYBCardTarget.None).SetSeriesFromClassPackage();
+    public static final EYBCardData DATA = RegisterSeriesCard(MeguKakizaki.class)
+    		.SetSkill(1, AbstractCard.CardRarity.UNCOMMON, eatyourbeets.cards.base.EYBCardTarget.None);
     
     public MeguKakizaki()
     {

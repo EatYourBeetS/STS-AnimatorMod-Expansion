@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.AnimatorBetaCard;
 import eatyourbeets.cards.animatorbeta.special.InverseTohka;
-import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
@@ -15,7 +14,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class TohkaYatogami extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(TohkaYatogami.class).SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Normal).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(TohkaYatogami.class).SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Normal)
             .PostInitialize(data -> data.AddPreview(new InverseTohka(), false));
 
     private boolean transformed;

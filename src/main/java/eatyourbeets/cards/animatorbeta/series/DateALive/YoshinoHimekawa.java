@@ -12,7 +12,7 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class YoshinoHimekawa extends AnimatorBetaCard
 {
-    public static final EYBCardData DATA = Register(YoshinoHimekawa.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.ALL).SetSeriesFromClassPackage()
+    public static final EYBCardData DATA = RegisterSeriesCard(YoshinoHimekawa.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.ALL)
             .PostInitialize(data -> {
                 data.AddPreview(new YoshinoHimekawa(true), false);
                 data.AddPreview(new Zadkiel(), false);

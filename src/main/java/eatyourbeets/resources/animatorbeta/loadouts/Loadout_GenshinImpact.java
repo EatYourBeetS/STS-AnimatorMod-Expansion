@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animatorbeta.loadouts;
 
+import eatyourbeets.cards.animatorbeta.curse.Curse_SearingBurn;
 import eatyourbeets.cards.animatorbeta.series.GenshinImpact.*;
 import eatyourbeets.cards.animatorbeta.ultrarare.RaidenShogun;
 import eatyourbeets.cards.base.CardSeries;
@@ -31,6 +32,7 @@ public class Loadout_GenshinImpact extends AnimatorLoadout
         AddStarterCard(JeanGunnhildr.DATA, 20);
         AddStarterCard(Venti.DATA, 25);
         AddStarterCard(AyakaKamisato.DATA, 38);
+        AddStarterCard(Curse_SearingBurn.DATA, -4);
     }
 
     @Override
