@@ -15,6 +15,7 @@ import eatyourbeets.powers.animatorbeta.SelfImmolationPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.JUtils;
 
 public class AyakaKamisato extends AnimatorBetaCard
 {
@@ -27,11 +28,11 @@ public class AyakaKamisato extends AnimatorBetaCard
     public AyakaKamisato() {
         super(DATA);
 
-        Initialize(31, 0, 3, 13);
+        Initialize(32, 0, 3, 13);
         SetUpgrade(5, 0, 0, 0);
         SetAffinity_Blue(1, 0, 0);
         SetAffinity_Green(1, 0, 0);
-        SetAffinity_Dark(1, 0, 4);
+        SetAffinity_Dark(2, 0, 4);
 
         SetEthereal(true);
         SetExhaust(true);
@@ -53,10 +54,11 @@ public class AyakaKamisato extends AnimatorBetaCard
         }
 
 
-        checkCache = CheckSpecialCondition(true);
+        checkCache = CheckSpecialCondition(false) && info.TryActivateLimited();
         int damageAmount = checkCache ? Math.min(player.currentHealth + player.currentBlock + GameUtilities.GetTempHP() - 1, secondaryValue) : secondaryValue;
         GameActions.Bottom.StackPower(new SelfImmolationPower(p, magicNumber));
-        GameActions.Bottom.TakeDamage(damageAmount, AttackEffects.CLAW);
+        GameActions.Bottom.TakeDamage(damageAmount, AttackEffects.CLAW)
+                .IsCancellable(false);
     }
 
     @Override
@@ -75,6 +77,6 @@ public class AyakaKamisato extends AnimatorBetaCard
 
     @Override
     public boolean CheckSpecialCondition(boolean tryUse){
-        return player.currentHealth + player.currentBlock + GameUtilities.GetTempHP() <= secondaryValue && tryUse ? CombatStats.TryActivateLimited(cardID) : CombatStats.CanActivateLimited(cardID);
+        return (player.currentHealth + player.currentBlock + GameUtilities.GetTempHP() <= secondaryValue);
     }
 }

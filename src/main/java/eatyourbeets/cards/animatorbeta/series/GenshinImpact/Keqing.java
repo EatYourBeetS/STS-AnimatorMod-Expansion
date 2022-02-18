@@ -6,14 +6,17 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import eatyourbeets.cards.AnimatorBetaCard;
+import eatyourbeets.cards.animatorbeta.special.Megunee_Zombie;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.*;
 
-public class Keqing extends AnimatorBetaCard
+public class Keqing extends AnimatorBetaCard implements OnStartOfTurnPostDrawSubscriber
 {
     public static final EYBCardData DATA = RegisterSeriesCard(Keqing.class)
             .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Piercing)
@@ -35,12 +38,34 @@ public class Keqing extends AnimatorBetaCard
         SetExhaust(true);
     }
 
+    @Override
+    public void OnStartOfTurnPostDraw()
+    {
+        if (player.exhaustPile.contains(this))
+        {
+            cooldown.ProgressCooldownAndTrigger(null);
+        }
+        else
+        {
+            CombatStats.onStartOfTurnPostDraw.Unsubscribe(this);
+        }
+    }
+
     public void update() {
         super.update();
         if (hasTag(HASTE)) {
             canGive = true;
         }
     }
+
+    @Override
+    public void triggerOnExhaust()
+    {
+        super.triggerOnExhaust();
+
+        CombatStats.onStartOfTurnPostDraw.Subscribe(this);
+    }
+
 
     @Override
     public void triggerWhenDrawn() {
@@ -74,5 +99,6 @@ public class Keqing extends AnimatorBetaCard
                 .ShowEffect(true, false);
         BetaActions.Bottom.ModifyTag(this, HASTE, true);
         canGive = true;
+        CombatStats.onStartOfTurnPostDraw.Unsubscribe(this);
     }
 }

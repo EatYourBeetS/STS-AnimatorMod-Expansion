@@ -24,12 +24,18 @@ public class HuTao extends AnimatorBetaCard
         super(DATA);
 
         Initialize(2, 0, 4, 2);
-        SetUpgrade(0, 0, 1, 0);
+        SetUpgrade(2, 0, 0, 0);
         SetAffinity_Red(1, 0, 0);
         SetAffinity_Dark(2, 0, 8);
 
         SetEthereal(true);
         SetExhaust(true);
+    }
+
+    @Override
+    public void OnUpgrade() {
+        super.OnUpgrade();
+        SetInnate(true);
     }
 
     @Override

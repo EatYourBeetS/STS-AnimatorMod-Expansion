@@ -54,6 +54,11 @@
 	  "DESCRIPTION": "Starter: Apply !M! [Vulnerable] ** (!S! in {Afterlife}). || Add !S! {Dazed} to ** your draw pile.",
 	  "NAME": "Masami Iwasawa"
 	},
+	"animatorbeta:MotokoKusanagi":
+	{
+	  "DESCRIPTION": "When Exhausted: Gain !M! [Blur] and [Support Damage]. Returns to your draw pile in !S! turns, reduced by 1 per 150 [Gold] (min. 1).",
+	  "NAME": "Motoko Kusanagi"
+	},
 	"animatorbeta:Noda":
 	{
 	  "DESCRIPTION": "{Synergy} or !A! <R>: ** Gain|Boost [F]. || When Discarded: Exhaust and gain !M! [F].",
@@ -491,7 +496,7 @@
 	},
 	"animatorbeta:Keqing":
 	{
-	  "DESCRIPTION": "Cooldown !S!: Moves to your draw pile and gains {~Haste}. || When drawn with {~Haste}: Channel [Lightning] and trigger it once.",
+	  "DESCRIPTION": "When Exhausted: Returns to your draw pile in !S! turns and gains {~Haste}. || When drawn with {~Haste}: Channel [Lightning] and trigger it once.",
 	  "NAME": "Keqing"
 	},
 	"animatorbeta:Klee":
