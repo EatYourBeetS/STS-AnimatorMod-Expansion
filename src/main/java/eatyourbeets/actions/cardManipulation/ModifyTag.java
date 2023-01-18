@@ -15,6 +15,11 @@ public class ModifyTag extends GenericCardSelection
     protected boolean value;
     protected Color flashColor = Colors.Gold(1).cpy();
 
+    public ModifyTag(CardGroup group, int amount, AbstractCard.CardTags tag, boolean remove)
+    {
+        this(null, group, amount, tag, remove);
+    }
+
     protected ModifyTag(AbstractCard card, CardGroup group, int amount, AbstractCard.CardTags tag, boolean value)
     {
         super(card, group, amount);
@@ -23,21 +28,9 @@ public class ModifyTag extends GenericCardSelection
         this.value = value;
     }
 
-    public ModifyTag(CardGroup group, int amount, AbstractCard.CardTags tag, boolean remove)
-    {
-        this(null, group, amount, tag, remove);
-    }
-
     public ModifyTag(AbstractCard card, AbstractCard.CardTags tag, boolean remove)
     {
         this(card, null, 1, tag, remove);
-    }
-
-    public ModifyTag Flash(Color flashColor)
-    {
-        this.flashColor = flashColor;
-
-        return this;
     }
 
     @Override
@@ -57,5 +50,12 @@ public class ModifyTag extends GenericCardSelection
         }
 
         BetaGameUtilities.ModifyCardTag(card, tag, value);
+    }
+
+    public ModifyTag Flash(Color flashColor)
+    {
+        this.flashColor = flashColor;
+
+        return this;
     }
 }

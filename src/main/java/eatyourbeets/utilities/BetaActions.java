@@ -50,23 +50,34 @@ public class BetaActions
         return Top.Add(new DelayAllActions(true));
     }
 
-    public static ArrayList<AbstractGameAction> GetActions()
-    {
-        return AbstractDungeon.actionManager.actions;
-    }
-
     public <T extends AbstractGameAction> T Add(T action)
     {
         return baseActions.Add(action);
     }
 
-    public ApplyPowerAuto ApplyPower(TargetHelper target, PowerHelper power, int powAmount) {
+    public static ArrayList<AbstractGameAction> GetActions()
+    {
+        return AbstractDungeon.actionManager.actions;
+    }
+
+    public ApplyPowerAuto ApplyPower(TargetHelper target, PowerHelper power, int powAmount)
+    {
         return Add(new ApplyPowerAuto(target, power, powAmount));
     }
 
     public ApplyPower GainSupportDamage(int amount)
     {
         return StackPower(new SupportDamagePower(player, amount));
+    }
+
+    public ApplyPower StackPower(AbstractPower power)
+    {
+        return this.StackPower(power.owner, power);
+    }
+
+    public ApplyPower StackPower(AbstractCreature source, AbstractPower power)
+    {
+        return Add(new ApplyPower(source, power.owner, power, power.amount));
     }
 
     public ModifyTag ModifyTag(AbstractCard card, AbstractCard.CardTags tag, boolean value)
@@ -84,18 +95,10 @@ public class BetaActions
         return Add(new ReducePower(target, source, powerID, amount));
     }
 
-    public ApplyPower StackPower(AbstractPower power) {
-        return this.StackPower(power.owner, power);
-    }
-
-    public ApplyPower StackPower(AbstractCreature source, AbstractPower power) {
-        return Add(new ApplyPower(source, power.owner, power, power.amount));
-    }
-
-    public ApplyPowerAuto StackPower(TargetHelper target, PowerHelper power, int stacks) {
+    public ApplyPowerAuto StackPower(TargetHelper target, PowerHelper power, int stacks)
+    {
         return Add(new ApplyPowerAuto(target, power, stacks));
     }
-
 
 
 }

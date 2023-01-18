@@ -2,13 +2,8 @@ package eatyourbeets.utilities;
 
 import eatyourbeets.interfaces.delegates.FuncT1;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.*;
 import java.util.function.Predicate;
-import java.util.jar.JarEntry;
-import java.util.jar.JarInputStream;
 
 public class BetaJUtils extends JUtils
 {
@@ -62,6 +57,41 @@ public class BetaJUtils extends JUtils
         return result;
     }
 
+    public static <T, N extends Comparable<N>> T FindMin(T[] list, FuncT1<N, T> getProperty)
+    {
+        N best = null;
+        T result = null;
+        for (T t : list)
+        {
+            N prop = getProperty.Invoke(t);
+            if (best == null || prop.compareTo(best) < 0)
+            {
+                best = prop;
+                result = t;
+            }
+        }
+
+        return result;
+    }
+
+    public static <T> String InvokeBuilder(StringBuilder stringBuilder)
+    {
+        String result = stringBuilder.toString();
+        stringBuilder.setLength(0);
+        return result;
+    }
+
+    public static <T, N> ArrayList<N> Map(List<T> list, FuncT1<N, T> predicate)
+    {
+        final ArrayList<N> res = new ArrayList<>();
+        for (T t : list)
+        {
+            res.add(predicate.Invoke(t));
+        }
+
+        return res;
+    }
+
     public static <T, N extends Comparable<N>> N Max(T[] list, FuncT1<N, T> getProperty)
     {
         N best = null;
@@ -76,7 +106,6 @@ public class BetaJUtils extends JUtils
 
         return best;
     }
-
 
     public static <T, N extends Comparable<N>> N Max(Iterable<T> list, FuncT1<N, T> getProperty)
     {
@@ -93,21 +122,23 @@ public class BetaJUtils extends JUtils
         return best;
     }
 
-    public static <T, N extends Comparable<N>> T FindMin(T[] list, FuncT1<N, T> getProperty)
+    public static <T> float Mean(List<T> list, FuncT1<Float, T> predicate)
     {
-        N best = null;
-        T result = null;
+        if (list.size() <= 0)
+        {
+            return 0;
+        }
+        return Sum(list, predicate) / list.size();
+    }
+
+    public static <T> float Sum(Iterable<T> list, FuncT1<Float, T> predicate)
+    {
+        float sum = 0;
         for (T t : list)
         {
-            N prop = getProperty.Invoke(t);
-            if (best == null || prop.compareTo(best) < 0)
-            {
-                best = prop;
-                result = t;
-            }
+            sum += predicate.Invoke(t);
         }
-
-        return result;
+        return sum;
     }
 
     public static <T, N extends Comparable<N>> N Min(T[] list, FuncT1<N, T> getProperty)
@@ -138,57 +169,6 @@ public class BetaJUtils extends JUtils
         }
 
         return best;
-    }
-
-    public static <T> String InvokeBuilder(StringBuilder stringBuilder)
-    {
-        String result = stringBuilder.toString();
-        stringBuilder.setLength(0);
-        return result;
-    }
-
-    public static <T, N> ArrayList<N> Map(List<T> list, FuncT1<N, T> predicate)
-    {
-        final ArrayList<N> res = new ArrayList<>();
-        for (T t : list)
-        {
-            res.add(predicate.Invoke(t));
-        }
-
-        return res;
-    }
-
-    public static <T> float Mean(List<T> list, FuncT1<Float, T> predicate)
-    {
-        if (list.size() <= 0) {
-            return 0;
-        }
-        return Sum(list,predicate) / list.size();
-    }
-
-    public static Integer[] RangeArray(int lowest, int highest)
-    {
-        return RangeArray(lowest, highest, 1);
-    }
-
-    public static Integer[] RangeArray(int lowest, int highest, int step)
-    {
-        if (highest < lowest) {
-            return new Integer[]{};
-        }
-        Integer[] values = new Integer[(highest - lowest) / step + 1];
-        Arrays.setAll(values, i -> i * step + lowest);
-        return values;
-    }
-
-    public static <T> float Sum(Iterable<T> list, FuncT1<Float, T> predicate)
-    {
-        float sum = 0;
-        for (T t : list)
-        {
-            sum += predicate.Invoke(t);
-        }
-        return sum;
     }
 
     public static <T> T Random(T[] items)
@@ -225,5 +205,21 @@ public class BetaJUtils extends JUtils
         }
 
         throw new RuntimeException("items.size() was smaller than " + targetIndex + ".");
+    }
+
+    public static Integer[] RangeArray(int lowest, int highest)
+    {
+        return RangeArray(lowest, highest, 1);
+    }
+
+    public static Integer[] RangeArray(int lowest, int highest, int step)
+    {
+        if (highest < lowest)
+        {
+            return new Integer[]{};
+        }
+        Integer[] values = new Integer[(highest - lowest) / step + 1];
+        Arrays.setAll(values, i -> i * step + lowest);
+        return values;
     }
 }
