@@ -22,8 +22,6 @@ public class InverseTohka extends AnimatorCard
         SetUpgrade(3, 0);
         SetAffinity_Red(2, 0, 0);
         SetAffinity_Dark(1, 0, 0);
-
-        SetAutoplay(true);
     }
 
     @Override

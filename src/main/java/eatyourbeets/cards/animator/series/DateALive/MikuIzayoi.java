@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
@@ -7,6 +8,7 @@ import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.powers.EYBClickablePower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class MikuIzayoi extends AnimatorCard
@@ -22,22 +24,27 @@ public class MikuIzayoi extends AnimatorCard
         Initialize(0, 0, 3, 1);
         SetAffinity_Light(1, 1, 0);
         SetEthereal(true);
-        SetHarmonic(true);
+
+        SetAffinityRequirement(Affinity.Blue, 3);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.GainInspiration(secondaryValue);
-        if (JUtils.Count(player.powers, po -> po instanceof EYBClickablePower) >= magicNumber)
-        {
-            GameActions.Bottom.GainInspiration(secondaryValue);
-        }
+        GameActions.Bottom.GainInspiration(magicNumber);
 
-        if (info.IsSynergizing)
+        if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.Motivate(secondaryValue);
+            GameActions.Bottom.SelectFromPile(name, secondaryValue, p.drawPile)
+                    .SetFilter(GameUtilities::IsSealed)
+                    .AddCallback(cards ->
+                    {
+                        for (AbstractCard c : cards)
+                        {
+                            GameActions.Bottom.Motivate(c, 1);
+                        }
+                    });
         }
     }
 

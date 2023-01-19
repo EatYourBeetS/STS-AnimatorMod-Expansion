@@ -1,0 +1,81 @@
+package eatyourbeets.cards.animator.series.Rewrite;
+
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.monsters.EnemyIntent;
+import eatyourbeets.powers.CombatStats;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
+
+public class KotoriKanbe2 extends AnimatorCard
+{
+    public static final EYBCardData DATA = Register(KotoriKanbe2.class).SetSkill(1, CardRarity.RARE);
+    public static final int HP_HEAL_THRESHOLD = 30;
+
+    public KotoriKanbe2()
+    {
+        super(DATA);
+
+        Initialize(0, 0, 3, 4);
+
+        SetEthereal(true);
+        SetExhaust(true);
+        SetAffinity_Light(2, 0, 0);
+        SetAffinity_Blue(1, 0, 0);
+    }
+
+    @Override
+    public String GetRawDescription()
+    {
+        return GetRawDescription(HP_HEAL_THRESHOLD);
+    }
+
+    @Override
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    {
+        int heal = m.maxHealth - m.currentHealth;
+        int stacks = Math.floorDiv(heal, magicNumber);
+
+        GameActions.Bottom.Heal(p, m, heal);
+
+        if (stacks > 0)
+        {
+            GameActions.Bottom.ApplyWeak(p, m, stacks);
+            GameActions.Bottom.ApplyVulnerable(p, m, stacks);
+
+            if (heal >= HP_HEAL_THRESHOLD && info.TryActivateLimited())
+            {
+                GameActions.Bottom.ReduceStrength(m, secondaryValue, false);
+            }
+        }
+    }
+
+    @Override
+    public void OnDrag(AbstractMonster m)
+    {
+        super.OnDrag(m);
+
+        if (m != null)
+        {
+            int heal = m.maxHealth - m.currentHealth;
+            int stacks = Math.floorDiv(heal, magicNumber);
+            if (stacks > 0)
+            {
+                final EnemyIntent intent = GameUtilities.GetIntent(m).AddWeak();
+                if (heal >= HP_HEAL_THRESHOLD && CombatStats.CanActivateLimited(cardID))
+                {
+                    intent.AddStrength(-secondaryValue);
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        SetEthereal(false);
+    }
+}

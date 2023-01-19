@@ -2,8 +2,13 @@ package eatyourbeets.utilities;
 
 import eatyourbeets.interfaces.delegates.FuncT1;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.*;
 import java.util.function.Predicate;
+import java.util.jar.JarEntry;
+import java.util.jar.JarInputStream;
 
 public class BetaJUtils extends JUtils
 {
@@ -221,5 +226,49 @@ public class BetaJUtils extends JUtils
         Integer[] values = new Integer[(highest - lowest) / step + 1];
         Arrays.setAll(values, i -> i * step + lowest);
         return values;
+    }
+
+    // GetClassNamesFromJarFile in JUtils only pulls from the base Animator jar, so we need to duplicate this function to get the beta card classes
+    // TODO have a better, unified way to do this
+    public static ArrayList<String> GetClassNamesFromJarFile(String prefix)
+    {
+        if (classNames.size() == 0)
+        {
+            try
+            {
+                final String path = BetaJUtils.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
+                final JarInputStream jarFile = new JarInputStream(new FileInputStream(path));
+
+                while (true)
+                {
+                    final JarEntry entry = jarFile.getNextJarEntry();
+                    if (entry == null)
+                    {
+                        break;
+                    }
+
+                    final String name = entry.getName();
+                    if (name.endsWith(".class") && name.indexOf('$') == -1)
+                    {
+                        classNames.add(name.replaceAll("/", "\\."));
+                    }
+                }
+            }
+            catch (IOException | URISyntaxException e)
+            {
+                throw new RuntimeException(e);
+            }
+        }
+
+        final ArrayList<String> result = new ArrayList<>();
+        for (String entry : classNames)
+        {
+            if (entry.startsWith(prefix))
+            {
+                result.add(entry.substring(0, entry.lastIndexOf('.')));
+            }
+        }
+
+        return result;
     }
 }

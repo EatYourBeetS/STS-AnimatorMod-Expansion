@@ -40,15 +40,15 @@ public class SajinKomamura extends AnimatorCard
         {
             if (ForceStance.STANCE_ID.equals(stance.ID))
             {
-                GameActions.Bottom.StackAffinityPower(Affinity.Red, magicNumber, false);
+                GameActions.Bottom.GainAffinity(Affinity.Red, magicNumber, false);
             }
             else if (AgilityStance.STANCE_ID.equals(stance.ID))
             {
-                GameActions.Bottom.StackAffinityPower(Affinity.Green, magicNumber, false);
+                GameActions.Bottom.GainAffinity(Affinity.Green, magicNumber, false);
             }
             else if (IntellectStance.STANCE_ID.equals(stance.ID))
             {
-                GameActions.Bottom.StackAffinityPower(Affinity.Blue, magicNumber, false);
+                GameActions.Bottom.GainAffinity(Affinity.Blue, magicNumber, false);
             }
 
         }

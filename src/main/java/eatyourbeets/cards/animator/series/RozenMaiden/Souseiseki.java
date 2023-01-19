@@ -8,6 +8,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -21,8 +22,8 @@ public class Souseiseki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 2, 0, 0);
-        SetUpgrade(2, 1, 0, 0);
+        Initialize(8, 0, 0, 0);
+        SetUpgrade(3, 0, 0, 0);
         SetAffinity_Blue(1, 0, 0);
         SetAffinity_Green(1, 0, 1);
     }
@@ -31,23 +32,15 @@ public class Souseiseki extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
-        GameActions.Bottom.GainBlock(block);
 
         GameActions.Bottom.ExhaustFromHand(name, 1, false)
-                .SetOptions(false, false, false)
+                .SetOptions(true, true, true)
                 .AddCallback(cards -> {
-                    if (cards.size() > 0 && GameUtilities.IsHindrance(cards.get(0)))
+                    if (cards.size() > 0 && GameUtilities.IsSealed(cards.get(0)))
                     {
                         GameActions.Bottom.Draw(1);
                     }
                 });
-
-        if (info.IsSynergizing)
-        {
-            GameActions.Bottom.Draw(1)
-                    .ShuffleIfEmpty(false)
-                    .SetFilter(c -> Suiseiseki.DATA.ID.equals(c.cardID), false);
-        }
     }
 
     @Override
@@ -55,8 +48,11 @@ public class Souseiseki extends AnimatorCard
     {
         super.triggerOnManualDiscard();
 
-        GameActions.Bottom.Draw(1)
-                .ShuffleIfEmpty(false)
-                .SetFilter(c -> Suiseiseki.DATA.ID.equals(c.cardID), false);
+        if (CombatStats.TryActivateSemiLimited(cardID))
+        {
+            GameActions.Bottom.Draw(1)
+                    .ShuffleIfEmpty(false)
+                    .SetFilter(GameUtilities::HasGreenAffinity, false);
+        }
     }
 }

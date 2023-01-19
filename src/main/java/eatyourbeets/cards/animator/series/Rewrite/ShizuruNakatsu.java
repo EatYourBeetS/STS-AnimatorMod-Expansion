@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.JUtils;
@@ -20,8 +21,8 @@ public class ShizuruNakatsu extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(1, 3, 2, 5);
-        SetUpgrade(0, 3, 0);
+        Initialize(1, 0, 2, 5);
+        SetUpgrade(0, 0, 0);
         SetAffinity_Green(2, 0, 2);
     }
 
@@ -44,23 +45,18 @@ public class ShizuruNakatsu extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.GUNSHOT);
-        GameActions.Bottom.GainBlock(block);
 
-        if (info.IsSynergizing)
-        {
-            GameActions.Bottom.DiscardFromHand(name, magicNumber, false)
-                    .ShowEffect(true, true)
-                    .SetFilter(c -> c.type == CardType.SKILL)
-                    .SetOptions(false, true, false)
-                    .AddCallback((cards) -> {
-                                if (cards.size() >= magicNumber)
-                                {
-                                    GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID);
-                                }
+        GameActions.Bottom.DiscardFromHand(name, magicNumber, false)
+                .ShowEffect(true, true)
+                .SetFilter(c -> c.type == CardType.SKILL)
+                .SetOptions(false, true, false)
+                .AddCallback((cards) -> {
+                            if (cards.size() >= magicNumber)
+                            {
+                                GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID);
                             }
-                    );
-        }
-
+                        }
+                );
     }
 
     @Override
@@ -75,7 +71,7 @@ public class ShizuruNakatsu extends AnimatorCard
 
     private boolean CheckAttackCondition()
     {
-        Affinity highestAffinity = JUtils.FindMax(Arrays.asList(Affinity.Basic()), this::GetHandAffinity);
+        Affinity highestAffinity = JUtils.FindMax(Arrays.asList(Affinity.Basic()), af -> CombatStats.Affinities.GetUsableAffinity(Affinity.Green));
         return (highestAffinity.equals(Affinity.Green));
     }
 }

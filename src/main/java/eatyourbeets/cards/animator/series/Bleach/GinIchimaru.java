@@ -7,6 +7,7 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_GainOrBoost;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.TargetHelper;
 
@@ -40,21 +41,13 @@ public class GinIchimaru extends AnimatorCard
             GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);
         }
 
-        if (TryUseAffinity(Affinity.Red) || TryUseAffinity(Affinity.Green))
+        GameActions.Bottom.Callback(() -> makeChoice(m, secondaryValue, magicNumber));
+
+        if (AgilityStance.IsActive())
         {
             GameActions.Bottom.Exhaust(this);
+            GameActions.Bottom.Callback(() -> makeChoice(m, secondaryValue, magicNumber));
         }
-
-        if (TryUseAffinity(Affinity.Blue))
-        {
-            GameActions.Bottom.ApplyVulnerable(TargetHelper.Enemies(), magicNumber);
-        }
-    }
-
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.Callback(() -> makeChoice(m, 1));
     }
 
     @Override
@@ -70,18 +63,12 @@ public class GinIchimaru extends AnimatorCard
         SetAffinityRequirement(Affinity.Green, 4);
     }
 
-    private void makeChoice(AbstractMonster m, int selections)
+    private void makeChoice(AbstractMonster m, int selections, int amount)
     {
         if (choices.TryInitialize(this))
         {
-            if (GetHandAffinity(Affinity.Red) > 0)
-            {
-                choices.AddEffect(new GenericEffect_GainOrBoost(Affinity.Red, GetHandAffinity(Affinity.Red), false));
-            }
-            if (GetHandAffinity(Affinity.Green) > 0)
-            {
-                choices.AddEffect(new GenericEffect_GainOrBoost(Affinity.Green, GetHandAffinity(Affinity.Green), false));
-            }
+            choices.AddEffect(new GenericEffect_GainOrBoost(Affinity.Red, amount, false));
+            choices.AddEffect(new GenericEffect_GainOrBoost(Affinity.Green, amount, false));
         }
         choices.Select(selections, m);
     }

@@ -18,6 +18,8 @@ public class ToukaNishikujou extends AnimatorCard
         SetUpgrade(0, 0, 1, 0);
         SetAffinity_Green(1, 0, 0);
         SetAffinity_Light(1, 1, 0);
+
+        SetAffinityRequirement(Affinity.Green, 3);
     }
 
     @Override
@@ -26,13 +28,12 @@ public class ToukaNishikujou extends AnimatorCard
         GameActions.Bottom.CreateThrowingKnives(magicNumber).AddCallback(card -> {
             if (card != null)
             {
-                GameActions.Bottom.IncreaseScaling(card, Affinity.Green, GetHandAffinity(Affinity.General));
+                GameActions.Bottom.IncreaseScaling(card, Affinity.Green, magicNumber);
             }
 
-            if (info.IsSynergizing)
+            if (CheckSpecialCondition(true))
             {
-                GameActions.Bottom.Cycle(name, secondaryValue)
-                        .SetFilter(c -> c.cardID.equals(ThrowingKnife.DATA.ID));
+                GameActions.Bottom.Cycle(name, secondaryValue);
             }
         });
     }
@@ -42,7 +43,6 @@ public class ToukaNishikujou extends AnimatorCard
     {
         super.triggerOnManualDiscard();
 
-        GameActions.Bottom.Cycle(name, secondaryValue)
-                .SetFilter(c -> c.cardID.equals(ThrowingKnife.DATA.ID));
+        GameActions.Bottom.Cycle(name, secondaryValue);
     }
 }

@@ -30,8 +30,17 @@ public class Megunee_Zombie extends AnimatorCard implements OnStartOfTurnPostDra
 
         SetHealing(true);
         SetExhaust(true);
-        SetAutoplay(true);
         SetMultiDamage(true);
+    }
+
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        GameActions.Delayed.Callback(() -> {
+            if (player.hand.contains(this)) {
+                GameActions.Top.AutoPlay(this, player.hand, (AbstractMonster)null);
+            }
+
+        });
     }
 
     @Override

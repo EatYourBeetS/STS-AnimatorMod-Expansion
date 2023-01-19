@@ -29,13 +29,13 @@ public class Loadout_Rewrite extends AnimatorLoadout
         AddStarterCard(LuciaKonohana.DATA, 11);
         AddStarterCard(SakuyaOhtori.DATA, 11);
         AddStarterCard(KotarouTennouji.DATA, 19);
-        AddStarterCard(KotoriKanbe.DATA, 22);
+        AddStarterCard(KotoriKanbe2.DATA, 22);
     }
 
     @Override
     public EYBCardData GetSymbolicCard()
     {
-        return Kagari.DATA;
+        return Kagari2.DATA;
     }
 
     @Override

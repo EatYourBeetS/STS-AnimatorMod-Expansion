@@ -3,14 +3,12 @@ package eatyourbeets.cards.animator.series.DateALive;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.subscribers.OnSynergySubscriber;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class NiaHonjou extends AnimatorCard
 {
@@ -44,11 +42,11 @@ public class NiaHonjou extends AnimatorCard
 
         if (CombatStats.TryActivateSemiLimited(cardID))
         {
-            GameActions.Top.GainBlessing(secondaryValue, upgraded);
+            GameActions.Top.GainAffinity(Affinity.Light, secondaryValue, upgraded);
         }
     }
 
-    public static class NiaHonjouPower extends AnimatorPower implements OnSynergySubscriber
+    public static class NiaHonjouPower extends AnimatorPower
     {
         public NiaHonjouPower(AbstractPlayer owner, int amount)
         {
@@ -66,32 +64,10 @@ public class NiaHonjou extends AnimatorCard
         }
 
         @Override
-        public void onInitialApplication()
-        {
-            super.onInitialApplication();
-
-            CombatStats.onSynergy.Subscribe(this);
-        }
-
-        @Override
-        public void onRemove()
-        {
-            super.onRemove();
-
-            CombatStats.onSynergy.Unsubscribe(this);
-        }
-
-        @Override
         public void stackPower(int stackAmount)
         {
             super.stackPower(stackAmount);
             updateDescription();
-        }
-
-        @Override
-        public void OnSynergy(AbstractCard card)
-        {
-            GameActions.Bottom.GainBlock(amount * 2);
         }
 
         @Override
@@ -106,7 +82,14 @@ public class NiaHonjou extends AnimatorCard
         {
             super.onAfterCardPlayed(usedCard);
 
-            GameActions.Bottom.GainBlock(amount);
+            if (GameUtilities.IsSealed(usedCard))
+            {
+                GameActions.Bottom.GainBlock(amount * 2);
+            }
+            else
+            {
+                GameActions.Bottom.GainBlock(amount);
+            }
         }
     }
 }

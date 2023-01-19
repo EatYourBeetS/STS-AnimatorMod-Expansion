@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameEffects;
 public class Chibimoth extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Chibimoth.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
-            .PostInitialize(data -> data.AddPreview(new KotoriKanbe(), false));
+            .PostInitialize(data -> data.AddPreview(new KotoriKanbe2(), false));
 
     public Chibimoth()
     {
@@ -80,7 +80,7 @@ public class Chibimoth extends AnimatorCard
     {
         for (AbstractCard c : group.group)
         {
-            if (KotoriKanbe.DATA.ID.equals(c.cardID))
+            if (KotoriKanbe2.DATA.ID.equals(c.cardID))
             {
                 if (group.type != CardGroup.CardGroupType.HAND)
                 {

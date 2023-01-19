@@ -27,7 +27,7 @@ public class InverseOrigami extends AnimatorCard
         Initialize(0, 0, 3, SUPPORT_DAMAGE_COST);
         SetAffinity_Blue(1, 1, 0);
         SetAffinity_Dark(1, 0, 0);
-        SetAutoplay(true);
+        SetEthereal(true);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class InverseOrigami extends AnimatorCard
     @Override
     protected void OnUpgrade()
     {
-        SetAutoplay(false);
+        SetEthereal(false);
     }
 
     public static class InverseOrigamiPower extends AnimatorClickablePower implements OnEvokeOrbSubscriber

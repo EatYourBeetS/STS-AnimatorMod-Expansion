@@ -11,7 +11,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import eatyourbeets.cards.animator.colorless.rare.KotoriKanbe;
 import eatyourbeets.cards.animator.colorless.uncommon.IchigoKurosaki;
-import eatyourbeets.cards.animator.special.IchigoKurosaki_Bankai;
+import eatyourbeets.cards.animator.series.Bleach.IchigoKurosaki2;
+import eatyourbeets.cards.animator.series.Rewrite.KotoriKanbe2;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameUtilities;
@@ -35,15 +36,11 @@ public class CardLibraryPatches
     {
         if (IchigoKurosaki.DATA.ID.equals(cardID))
         {
-            return eatyourbeets.cards.animator.series.Bleach.IchigoKurosaki.DATA;
-        }
-        if (IchigoKurosaki_Bankai.DATA.ID.equals(cardID))
-        {
-            return eatyourbeets.cards.animator.special.IchigoKurosaki_Bankai.DATA;
+            return IchigoKurosaki2.DATA;
         }
         if (KotoriKanbe.DATA.ID.equals(cardID))
         {
-            return eatyourbeets.cards.animator.series.Rewrite.KotoriKanbe.DATA;
+            return KotoriKanbe2.DATA;
         }
         return null;
     }

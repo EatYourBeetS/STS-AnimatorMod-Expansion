@@ -22,8 +22,17 @@ public class JumpyDumpty extends AnimatorCard
         Initialize(9, 0, 1, 2);
         SetUpgrade(3, 0, 0, 0);
         SetAffinity_Red(1, 0, 2);
-        SetAutoplay(true);
         SetExhaust(true);
+    }
+
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        GameActions.Delayed.Callback(() -> {
+            if (player.hand.contains(this)) {
+                GameActions.Top.AutoPlay(this, player.hand, (AbstractMonster)null);
+            }
+
+        });
     }
 
     @Override

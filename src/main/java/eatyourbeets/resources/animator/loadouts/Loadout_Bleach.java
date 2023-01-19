@@ -23,7 +23,7 @@ public class Loadout_Bleach extends AnimatorLoadout
         AddStarterCard(UryuuIshida.DATA, 5);
         AddStarterCard(IkkakuMadarame.DATA, 5);
         AddStarterCard(OrihimeInoue.DATA, 6);
-        AddStarterCard(IchigoKurosaki.DATA, 6);
+        AddStarterCard(IchigoKurosaki2.DATA, 6);
         AddStarterCard(MayuriKurotsuchi.DATA, 7);
         AddStarterCard(IsshinKurosaki.DATA, 10);
         AddStarterCard(RukiaKuchiki.DATA, 13);
@@ -38,7 +38,7 @@ public class Loadout_Bleach extends AnimatorLoadout
     @Override
     public EYBCardData GetSymbolicCard()
     {
-        return IchigoKurosaki.DATA;
+        return IchigoKurosaki2.DATA;
     }
 
     @Override

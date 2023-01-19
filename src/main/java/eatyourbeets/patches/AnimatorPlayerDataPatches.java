@@ -29,7 +29,6 @@ public class AnimatorPlayerDataPatches
 
             add.Invoke(new Loadout_Bleach(), 0);
             add.Invoke(new Loadout_DateALive(), 0);
-            add.Invoke(new Loadout_GenshinImpact(), 0);
             add.Invoke(new Loadout_Rewrite(), 0);
             add.Invoke(new Loadout_RozenMaiden(), 0);
         }

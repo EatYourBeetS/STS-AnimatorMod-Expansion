@@ -18,7 +18,7 @@ import static com.megacrit.cardcrawl.cards.AbstractCard.CardTags.STRIKE;
 
 public class SpikeSpiegel extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(SpikeSpiegel.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged).SetColor(CardColor.COLORLESS).SetSeries(BetaCardSeries.CowboyBebop)
+    public static final EYBCardData DATA = Register(SpikeSpiegel.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged).SetColor(CardColor.COLORLESS).SetSeries(CardSeries.CowboyBebop)
             .PostInitialize(data -> data.AddPreview(new SwordfishII(), false));
 
     public SpikeSpiegel()

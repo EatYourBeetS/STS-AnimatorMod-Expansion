@@ -1,64 +1,41 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
+import com.badlogic.gdx.Game;
 import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.JUtils;
 
 public class Mayuri extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(Mayuri.class).SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.Random);
+    public static final EYBCardData DATA = Register(Mayuri.class).SetSkill(2, CardRarity.COMMON);
 
     public Mayuri()
     {
         super(DATA);
 
-        Initialize(7, 3, 2, 1);
-        SetUpgrade(3, 1, 0);
+        Initialize(0, 7, 2, 2);
+        SetUpgrade(0, 3, 0);
         SetAffinity_Light(1, 1, 2);
-    }
-
-    @Override
-    public boolean HasDirectSynergy(AbstractCard other)
-    {
-        return other.rarity.equals(CardRarity.BASIC);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.BLUNT_HEAVY);
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.SelectFromHand(name, secondaryValue, false)
-                .SetOptions(true, true, true)
-                .SetMessage(RetainCardsAction.TEXT[0])
-                .SetFilter(c -> c.tags.contains(CardTags.STARTER_DEFEND))
-                .AddCallback(cards ->
-                {
-                    if (cards.size() > 0)
-                    {
-                        AbstractCard card = cards.get(0);
-                        GameUtilities.Retain(card);
-                    }
-                });
+        GameActions.Bottom.ChannelOrbs(Lightning::new, magicNumber);
 
-        if (info.IsSynergizing && CombatStats.TryActivateSemiLimited(cardID))
+        if (JUtils.Any(GameUtilities.GetEnemies(true), mo -> GameUtilities.IsAttacking(mo.intent)))
         {
-            GameActions.Bottom.Callback(cards -> {
-                for (AbstractCard card : GameUtilities.GetOtherCardsInHand(this))
-                {
-                    if (card.tags.contains(CardTags.STARTER_DEFEND))
-                    {
-                        card.baseBlock += magicNumber;
-                    }
-                }
-            });
+            GameActions.Bottom.TriggerOrbPassive(secondaryValue);
         }
     }
 }

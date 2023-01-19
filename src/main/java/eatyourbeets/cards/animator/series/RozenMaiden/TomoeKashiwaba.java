@@ -18,10 +18,12 @@ public class TomoeKashiwaba extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 3, 1, 4);
+        Initialize(0, 3, 1, 2);
         SetUpgrade(0, 3, 0);
         SetAffinity_Green(1, 0, 1);
         SetAffinity_Red(1, 0, 0);
+
+        SetAffinityRequirement(Affinity.Blue, 2);
     }
 
     @Override
@@ -44,9 +46,9 @@ public class TomoeKashiwaba extends AnimatorCard
                     }
                 });
 
-        if (TryUseAffinity(Affinity.General))
+        if (CheckSpecialCondition(true))
         {
-
+            GameActions.Bottom.GainAffinity(Affinity.Green, secondaryValue, false);
         }
     }
 }

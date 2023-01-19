@@ -78,7 +78,6 @@ public class ChihayaOhtori extends AnimatorCard
 
     public void RefreshCost()
     {
-        int orange = GetHandAffinity(Affinity.Red, false);
         if (AgilityStance.IsActive())
         {
             CostModifiers.For(this).Set(-1);
