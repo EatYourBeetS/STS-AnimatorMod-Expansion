@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class NiaHonjou extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(NiaHonjou.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(NiaHonjou.class).SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None);
 
     public NiaHonjou()
     {
@@ -21,6 +21,7 @@ public class NiaHonjou extends AnimatorCard
         Initialize(0, 0, 2, 1);
         SetAffinity_Light(1, 1, 0);
         SetAffinity_Blue(1, 0, 0);
+        SetExhaust(true);
     }
 
     @Override
@@ -32,7 +33,7 @@ public class NiaHonjou extends AnimatorCard
     @Override
     protected void OnUpgrade()
     {
-        SetHaste(true);
+        SetExhaust(false);
     }
 
     @Override

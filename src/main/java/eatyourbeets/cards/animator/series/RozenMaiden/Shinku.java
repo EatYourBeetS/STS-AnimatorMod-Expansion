@@ -13,14 +13,14 @@ import eatyourbeets.utilities.GameUtilities;
 public class Shinku extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Shinku.class)
-            .SetAttack(1, AbstractCard.CardRarity.UNCOMMON);
+            .SetSkill(1, AbstractCard.CardRarity.UNCOMMON);
 
     public Shinku()
     {
         super(DATA);
 
-        Initialize(3, 3, 2, 3);
-        SetUpgrade(3, 1);
+        Initialize(0, 5, 1, 3);
+        SetUpgrade(0, 1);
         SetAffinity_Blue(1, 1, 1);
         SetAffinity_Dark(1, 0, 0);
         SetAffinity_Light(1, 0, 1);
@@ -30,10 +30,9 @@ public class Shinku extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
 
         GameActions.Bottom.Cycle(name, magicNumber).AddCallback(() -> GameActions.Bottom.ExhaustFromPile(name, 1, p.discardPile)
-                .SetFilter(GameUtilities::HasDarkAffinity)
+                .SetFilter(GameUtilities::IsSealed)
                 .SetOptions(false, true)
                 .AddCallback(() ->
                 {

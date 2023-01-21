@@ -18,10 +18,12 @@ public class InverseTohka extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(8, 0, 2, 1);
-        SetUpgrade(3, 0);
+        Initialize(7, 0, 3, 1);
+        SetUpgrade(1, 0, 1);
         SetAffinity_Red(2, 0, 0);
         SetAffinity_Dark(1, 0, 0);
+
+        SetAffinityRequirement(Affinity.Red, 3);
     }
 
     @Override
@@ -29,14 +31,8 @@ public class InverseTohka extends AnimatorCard
     {
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
         GameActions.Bottom.Add(new ShakeScreenAction(0.5f, ScreenShake.ShakeDur.LONG, ScreenShake.ShakeIntensity.HIGH));
-    }
-
-    @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.SpendEnergy(1, false).AddCallback(() -> {
+        if (CheckSpecialCondition(true))
+        {
             GameActions.Bottom.SelectFromPile(name, magicNumber, player.drawPile, player.hand, player.discardPile)
                     .SetOptions(true, true)
                     .SetFilter(c -> c instanceof AnimatorCard && this.series.equals(((AnimatorCard) c).series))
@@ -47,12 +43,23 @@ public class InverseTohka extends AnimatorCard
                             GameActions.Bottom.Motivate(c, 1);
                         }
                     });
+        }
+    }
+
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        GameActions.Delayed.Callback(() -> {
+            if (player.hand.contains(this)) {
+                GameActions.Top.AutoPlay(this, player.hand, (AbstractMonster)null);
+            }
+
         });
     }
 
     @Override
     protected float ModifyDamage(AbstractMonster enemy, float amount)
     {
-        return super.ModifyDamage(enemy, amount + CombatStats.SynergiesThisCombat().size() * magicNumber);
+        return super.ModifyDamage(enemy, amount + GetPlayerAffinity(Affinity.Blue) * magicNumber);
     }
 }

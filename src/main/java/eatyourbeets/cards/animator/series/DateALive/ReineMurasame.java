@@ -3,10 +3,7 @@ package eatyourbeets.cards.animator.series.DateALive;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.modifiers.BlockModifiers;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameActions;
@@ -25,6 +22,7 @@ public class ReineMurasame extends AnimatorCard
         SetUpgrade(0, 0);
         SetAffinity_Blue(2, 0, 0);
 
+        SetAffinityRequirement(Affinity.Blue, 3);
         SetExhaust(true);
     }
 
@@ -56,7 +54,7 @@ public class ReineMurasame extends AnimatorCard
                     });
         }
 
-        if (info.IsSynergizing && stacks > 0)
+        if (stacks > 0 && CheckSpecialCondition(true))
         {
             GameActions.Bottom.StackPower(new DrawCardNextTurnPower(p, stacks));
         }

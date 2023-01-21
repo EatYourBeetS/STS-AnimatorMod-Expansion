@@ -284,11 +284,15 @@
 			"NAME": "Inverse Origami"
 		},
 		"animator:InverseTohka":	{
-			"DESCRIPTION": "{Autoplay}. When Drawn: Spend [E] to {Motivate} !S! cards with this card's series anywhere. || Deals !M! more damage for every Synergy made this combat.",
+			"DESCRIPTION": "When drawn: {Autoplay}. Has +!M! damage per [B]. || !A! [R]: {Motivate} !S! random cards with this card's series anywhere.",
 			"NAME": "Inverse Tohka"
 		},
+		"animator:KazamachiYamai":	{
+			"DESCRIPTION": "{Starter}: Obtain a copy of this card. || <SLM>. When you gain [B]: {Fetch} this card.",
+			"NAME": "Kazamachi Yamai"
+		},
 		"animator:KotoriItsuka":	{
-			"DESCRIPTION": "Remove [Freezing] to deal double damage and apply !S! [Vulnerable]. Otherwise, apply !S! [Burning]. || <SLM>. Synergy: Increase the damage bonus of [Burning] by 15% this combat.",
+			"DESCRIPTION": "Evoke your first Orb !M! times. || !A! [B]: Increase the damage bonus of [Burning] by 15% this combat.",
 			"NAME": "Kotori Itsuka"
 		},
 		"animator:KurumiTokisaki":	{
@@ -336,13 +340,17 @@
 			"NAME": "Origami Tobiichi"
 		},
 		"animator:ReineMurasame":	{
-			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile. {Motivate} them and reduce ** their [Block] by !M!. || {Synergy}: Draw X cards next turn.",
+			"DESCRIPTION": "Add X {Shido Itsuka} to your draw pile. {Motivate} them and reduce ** their [Block] by !M!. || !A! [B]: Draw X cards next turn.",
 			"NAME": "Reine Murasame",
-			"UPGRADE_DESCRIPTION": "Add X Upgraded copies of {Shido Itsuka} to your draw pile. {Motivate} them and reduce their [Block] by !M!. || Synergy: Draw X cards next turn."
+			"UPGRADE_DESCRIPTION": "Add X Upgraded {Shido Itsuka} to your draw pile. {Motivate} them and reduce their [Block] by !M!. || !A! [B]: Draw X cards next turn."
 		},
 		"animator:Ren":	{
 			"DESCRIPTION": "Channel [Dark] if you have no [Dark]. Otherwise, trigger a random Orb. Then, apply !M! [Poison] for each [Dark] Channeled. || <SLM>. 3 [Dark]: Obtain {[D] Token}{+}.",
 			"NAME": "Ren"
+		},
+		"animator:RinneSonogami":	{
+			"DESCRIPTION": "Retain a card and give it +!M! [B] Scaling. || <SLM>. If you Seal a [L] card with this in hand: Obtain {[L] Token+}.",
+			"NAME": "Rinne Sonogami"
 		},
 		"animator:ShidoItsuka":	{
 			"DESCRIPTION": "Add 1 of !M! [B] cards to your draw pile. || !A! [B]: Upgrade it.",
@@ -350,16 +358,12 @@
 			"UPGRADE_DESCRIPTION": "Add 1 of !M! Upgraded [A_Blue] cards to your draw pile. || !A! [B]: Upgrade it."
 		},
 		"animator:TohkaYatogami":	{
-			"DESCRIPTION": "Deal !S! less damage for each Synergy made this combat. || If you made at least !M! Synergies this combat: Transform ** this card into {Inverse Tohka}.",
+			"DESCRIPTION": "Has -!S! damage per [R]. || If you have !A! [B]: Transform this into {Inverse Tohka} and <DRW-M>.",
 			"NAME": "Tohka Yatogami"
 		},
 		"animator:UltimateCheatCard":	{
 			"DESCRIPTION": "If you use this card, you should be ashamed of yourself.",
 			"NAME": "Ultimate Cheat Card"
-		},
-		"animator:YamaiSisters":	{
-			"DESCRIPTION": "{Starter}: Add a copy of this card to your hand. || <SLM>. When you make a [L] or [R] {Synergy}: {Fetch} this card.",
-			"NAME": "Yamai Sisters"
 		},
 		"animator:YoshinoHimekawa":	{
 			"DESCRIPTION": "When drawn: Discard this card and change its form, ** then gain !M! [~Blur]. || Gain !M! [~Blur]. ** <LIM>. Also Shuffle {Zadkiel} into your discard pile.",
@@ -587,7 +591,7 @@
 			"NAME": "Shimako"
 		},
 		"animator:ShizuruNakatsu":	{
-			"DESCRIPTION": "Discard !M! {Skills} to Enter <AS>. || If your highest [W] is [G]: Has + !S! damage.",
+			"DESCRIPTION": "Discard !M! {Skills} to Enter <AS>. || If your highest [W] is [G]: Has +!S! damage.",
 			"NAME": "Shizuru Nakatsu"
 		},
 		"animator:SougenEsaka":	{
@@ -679,14 +683,14 @@
 			"NAME": "Mitsu Kusabue"
 		},
 		"animator:NoriSakurada":	{
-			"DESCRIPTION": "Fetch a random card from your discard pile, then discard a card. || <SLM>: Retain a random card.",
+			"DESCRIPTION": "Fetch a random card from your discard pile. Discard a card. || !A! [L]: Retain a card.",
 			"EXTENDED_DESCRIPTION": [
 				"At end of this turn, discard any number of cards in your hand."
 			],
 			"NAME": "Nori Sakurada"
 		},
 		"animator:Shinku":	{
-			"DESCRIPTION": "Cycle !M! card(s). || Exhaust a [D] card from your discard pile to Gain !S! [THP]. If it was a {Hindrance}: Also gain [D].",
+			"DESCRIPTION": "Cycle !M! card(s). || Exhaust a [S] card from your discard pile to Gain !S! [THP].",
 			"NAME": "Shinku"
 		},
 		"animator:Shirosaki":	{

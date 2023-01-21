@@ -13,7 +13,7 @@ import eatyourbeets.powers.common.DelayedDamagePower;
 import eatyourbeets.utilities.BetaActions;
 import eatyourbeets.utilities.GameActions;
 
-public class NoriSakurada extends AnimatorCard implements OnEndOfTurnFirstSubscriber
+public class NoriSakurada extends AnimatorCard
 {
     public static final EYBCardData DATA =
             Register(NoriSakurada.class)
@@ -27,20 +27,7 @@ public class NoriSakurada extends AnimatorCard implements OnEndOfTurnFirstSubscr
         SetUpgrade(0, 0, 0, 0);
         SetAffinity_Light(1, 0, 0);
 
-        SetAffinityRequirement(Affinity.Light, 3);
-
-        SetRetainOnce(true);
-    }
-
-    @Override
-    public void OnEndOfTurnFirst(boolean isPlayer)
-    {
-        GameActions.Top.Reload(NoriSakurada.DATA.Strings.NAME, cards -> {
-            if (cards.size() > 0)
-            {
-                BetaActions.Top.ReducePower(player, player, DelayedDamagePower.POWER_ID, cards.size() * secondaryValue);
-            }
-        });
+        SetAffinityRequirement(Affinity.Light, 2);
     }
 
     @Override
@@ -51,9 +38,9 @@ public class NoriSakurada extends AnimatorCard implements OnEndOfTurnFirstSubscr
                 .SetOptions(true, false);
         GameActions.Bottom.DiscardFromHand(name, 1, false);
 
-        if (TryUseAffinity(Affinity.Light))
+        if (CheckSpecialCondition(true))
         {
-            CombatStats.onEndOfTurnFirst.SubscribeOnce(this);
+            GameActions.Bottom.Retain(name, 1, false);
         }
     }
 

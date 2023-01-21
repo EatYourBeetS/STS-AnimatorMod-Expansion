@@ -1,24 +1,19 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.interfaces.subscribers.OnSynergySubscriber;
+import eatyourbeets.interfaces.subscribers.OnAffinityGainedSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
-public class YamaiSisters extends AnimatorCard implements OnSynergySubscriber
+public class KazamachiYamai extends AnimatorCard implements OnAffinityGainedSubscriber
 {
-    public static final EYBCardData DATA = Register(YamaiSisters.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal);
+    public static final EYBCardData DATA = Register(KazamachiYamai.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal);
 
-    public YamaiSisters()
+    public KazamachiYamai()
     {
         super(DATA);
 
@@ -29,12 +24,22 @@ public class YamaiSisters extends AnimatorCard implements OnSynergySubscriber
     }
 
     @Override
-    public void OnSynergy(AbstractCard card)
+    public int OnAffinityGained(Affinity af, int amount)
     {
-        if ((GameUtilities.HasRedAffinity(card) || GameUtilities.HasLightAffinity(card)) && CombatStats.TryActivateSemiLimited(cardID))
-        {
-            GameActions.Bottom.MoveCard(this, player.hand);
-        }
+        GameActions.Bottom.Callback(() -> {
+            if (af == Affinity.Blue && CombatStats.TryActivateSemiLimited(cardID))
+            {
+                GameActions.Bottom.MoveCard(this, player.hand);
+            }
+        });
+
+        return amount;
+    }
+
+    public void triggerWhenCreated(boolean startOfBattle)
+    {
+        super.triggerWhenCreated(startOfBattle);
+        CombatStats.onAffinityGained.Subscribe(this);
     }
 
     @Override
