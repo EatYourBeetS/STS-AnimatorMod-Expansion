@@ -14,14 +14,14 @@ import eatyourbeets.utilities.GameEffects;
 
 public class Chibimoth extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(Chibimoth.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+    public static final EYBCardData DATA = Register(Chibimoth.class).SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
             .PostInitialize(data -> data.AddPreview(new KotoriKanbe2(), false));
 
     public Chibimoth()
     {
         super(DATA);
 
-        Initialize(0, 0, 1, 1);
+        Initialize(0, 0, 2, 2);
         SetUpgrade(0, 0, 1, 0);
         SetAffinity_Star(1, 1, 0);
         SetLoyal(true);
@@ -36,12 +36,12 @@ public class Chibimoth extends AnimatorCard
         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         group.addToBottom(CreateChoice(text[0], (c1, p1, m1) ->
         {
-            GameActions.Bottom.GainAffinity(Affinity.Green,magicNumber, false);
+            GameActions.Bottom.GainAffinity(Affinity.Green, magicNumber, false);
             BetaActions.Bottom.GainSupportDamage(secondaryValue);
         }));
         group.addToBottom(CreateChoice(text[1], (c1, p1, m1) ->
         {
-            GameActions.Bottom.GainAffinity(Affinity.Red,magicNumber, false);
+            GameActions.Bottom.GainAffinity(Affinity.Red, magicNumber, false);
             GameActions.Bottom.GainThorns(secondaryValue);
         }));
 
