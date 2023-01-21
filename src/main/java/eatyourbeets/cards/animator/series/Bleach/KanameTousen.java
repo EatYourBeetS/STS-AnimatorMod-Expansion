@@ -7,10 +7,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.PowerHelper;
@@ -34,9 +31,11 @@ public class KanameTousen extends AnimatorCard
 
         Initialize(0, 5, 2, 1);
         SetUpgrade(0, 4, 0);
-        SetAffinity_Dark(1, 1, 0);
+        SetAffinity_Dark(1, 0, 0);
         SetAffinity_Blue(1, 0, 0);
         SetAffinity_Green(1, 0, 0);
+
+        SetAffinityRequirement(Affinity.Blue, 3);
     }
 
     @Override
@@ -55,69 +54,10 @@ public class KanameTousen extends AnimatorCard
             }
         }
 
-        if (IntellectStance.IsActive() && CombatStats.TryActivateLimited(cardID))
+        if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.StackPower(player, new KanameTousenPower(player, 2));
-        }
-    }
-
-
-    public static class KanameTousenPower extends AnimatorPower
-    {
-        private static final String[] POWER_IDS = {StrengthPower.POWER_ID, DexterityPower.POWER_ID, FocusPower.POWER_ID};
-        private final HashMap<String, Integer> counts = new HashMap<>();
-
-        public KanameTousenPower(AbstractPlayer owner, int amount)
-        {
-            super(owner, KanameTousen.DATA);
-
-            this.amount = amount;
-            RefreshCounts();
-            updateDescription();
-        }
-
-        private void RefreshCounts()
-        {
-            for (String powerID : POWER_IDS)
-            {
-                int powerAmount = GameUtilities.GetPowerAmount(owner, powerID);
-                if (powerAmount < 0)
-                {
-                    counts.merge(powerID, powerAmount, Integer::sum);
-                    if (owner.hasPower(powerID))
-                    {
-                        GameActions.Bottom.RemovePower(owner, owner, powerID);
-                    }
-                }
-            }
-        }
-
-        @Override
-        public void atEndOfRound()
-        {
-            ReducePower(1);
-        }
-
-        @Override
-        public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
-        {
-            super.onApplyPower(power, target, source);
-
-            if (target == owner && Arrays.stream(POWER_IDS).anyMatch(s -> s.equals(power.ID)))
-            {
-                RefreshCounts();
-            }
-        }
-
-        @Override
-        public void onRemove()
-        {
-            super.onRemove();
-
-            for (Map.Entry<String, Integer> entry : counts.entrySet())
-            {
-                GameActions.Bottom.StackPower(TargetHelper.Source(), PowerHelper.ALL.get(entry.getKey()), entry.getValue());
-            }
+            GameActions.Bottom.GainArtifact(1);
+            GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
     }
 }

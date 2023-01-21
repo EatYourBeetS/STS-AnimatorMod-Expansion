@@ -37,7 +37,7 @@ public class SougenEsaka extends AnimatorCard
                     .ShowEffect(true, true)
                     .SetOrigin(CardSelection.Top).AddCallback(() -> {
                         GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
-                        GameActions.Bottom.GainAgility(magicNumber);
+                        GameActions.Bottom.GainAffinity(Affinity.Green,magicNumber);
                     });
 
         }

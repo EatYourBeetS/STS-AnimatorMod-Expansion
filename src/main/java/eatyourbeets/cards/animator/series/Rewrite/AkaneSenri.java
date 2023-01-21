@@ -101,7 +101,7 @@ public class AkaneSenri extends AnimatorCard
 
             if (card.hasTag(HASTE))
             {
-                GameActions.Bottom.GainAgility(1);
+                GameActions.Bottom.GainAffinity(Affinity.Green,1);
                 amount -= 1;
             }
 

@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 public class IchigoKurosaki2 extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(IchigoKurosaki2.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.Random)
+            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.Random)
 
             .PostInitialize(data -> data.AddPreview(new IchigoKurosaki_Bankai(), false));
 
@@ -19,7 +19,7 @@ public class IchigoKurosaki2 extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 0, 5);
+        Initialize(2, 0, 0, 3);
         SetUpgrade(3, 0, 0, 0);
 
         SetAffinity_Red(2, 0, 1);
@@ -31,8 +31,8 @@ public class IchigoKurosaki2 extends AnimatorCard
     {
         GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SLASH_HORIZONTAL);
 
-        GameActions.Bottom.GainForce(1, true);
-        GameActions.Bottom.GainAgility(1, true);
+        GameActions.Bottom.GainAffinity(Affinity.Red,1);
+        GameActions.Bottom.GainAffinity(Affinity.Green,1);
 
         GameActions.Bottom.Callback(() -> {
             if (CombatStats.Affinities.GetPowerAmount(Affinity.Red) >= secondaryValue)

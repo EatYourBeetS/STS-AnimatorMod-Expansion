@@ -90,7 +90,7 @@
 			"NAME": "Byakuya Bankai"
 		},
 		"animator:ByakuyaKuchiki":	{
-			"DESCRIPTION": "[R] or [G] Stance: Exit your Stance, Exhaust, and add {Byakuya Bankai} to your draw pile. Else: Enter [R] or [G] Stance.",
+			"DESCRIPTION": "Exit [R] or [G] Stance to Exhaust this and add {Byakuya Bankai} to your draw pile. Else: Enter [R] or [G] Stance.",
 			"NAME": "Byakuya Kuchiki"
 		},
 		"animator:GinIchimaru":	{
@@ -98,14 +98,14 @@
 			"NAME": "Gin Ichimaru"
 		},
 		"animator:KanameTousen":	{
-			"DESCRIPTION": "For each enemy: Gain !S! Temp. [Artifact] if it has [Shackles]. Otherwise, apply !M! [Shackles]. || <LIM>. <IS>: For the next !S! turns, ignore your buffs with negative stacks.",
+			"DESCRIPTION": "For each enemy: If it has [Shackles], Gain !S! Temp. [Artifact]. Otherwise, apply !M! [Shackles]. || !A! [B]: Gain [Artifact] and Exhaust.",
 			"EXTENDED_DESCRIPTION": [
 				"For the next #b{0} turns, ignore buffs with negative stacks."
 			],
 			"NAME": "Kaname Tousen"
 		},
 		"animator:IchigoKurosaki2":	{
-			"DESCRIPTION": "Gain [R] [G]. || !S! [R]: Exhaust, then add {Ichigo Bankai} to your draw pile.",
+			"DESCRIPTION": "Gain [R] [G]. || !S! [Force]: Exhaust, then add {Ichigo Bankai} to your draw pile.",
 			"NAME": "Ichigo Kurosaki"
 		},
 		"animator:IchigoKurosaki_Bankai":	{
@@ -117,10 +117,7 @@
 			"NAME": "Ikkaku Bankai"
 		},
 		"animator:IkkakuMadarame":	{
-			"DESCRIPTION": "<FS>: Exhaust and add {Ikkaku Bankai} to your draw pile. Else: Obtain {[R] Token}.",
-			"EXTENDED_DESCRIPTION": [
-				"You may gain #yAgility this turn. This overrides other effects that prevent #yAgility gain."
-			],
+			"DESCRIPTION": "<FS>: Obtain {[R] Token}. Else: Exhaust and add {Ikkaku Bankai} to your draw pile.",
 			"NAME": "Ikkaku Madarame"
 		},
 		"animator:IsshinKurosaki":	{
@@ -136,10 +133,7 @@
 			"NAME": "Mayuri Kurotsuchi"
 		},
 		"animator:OrihimeInoue":	{
-			"DESCRIPTION": "Gain !M! [Counter-Attack]. || !A! [G]: Channel [Fire].",
-			"EXTENDED_DESCRIPTION": [
-				"The next #b{0} time you are attacked this turn, Channel #yFire."
-			],
+			"DESCRIPTION": "Gain !M! [Counter-Attack]. || !A! [L]: Channel [Fire].",
 			"NAME": "Orihime Inoue"
 		},
 		"animator:RenjiAbarai":	{
@@ -151,7 +145,7 @@
 			"NAME": "Rukia Bankai"
 		},
 		"animator:RukiaKuchiki":	{
-			"DESCRIPTION": "<ST>: Channel !M! [Frost]. || !S! [G] or [B]: Exhaust, then add {Rukia Bankai} to ** your draw pile.",
+			"DESCRIPTION": "<ST>: Channel !M! [Frost]. || If you have !S! [G] or [B]: Exhaust, then add {Rukia Bankai} to ** your draw pile.",
 			"NAME": "Rukia Kuchiki"
 		},
 		"animator:SajinKomamura":	{
@@ -178,7 +172,7 @@
 			"NAME": "Uryuu Ishida"
 		},
 		"animator:YasutoraSado":	{
-			"DESCRIPTION": "Can only attack an enemy with [Block] or is intending to inflict a Negative Effect. || Cooldown !S!: Exhaust this card to enter <FS> or <AS>.",
+			"DESCRIPTION": "If your highest [W] is [R]: Has +!M! damage. || Cooldown !S!: Exhaust this card to enter <FS> or <AS>.",
 			"NAME": "Yasutora Sado"
 		},
 		"animator:ZarakiKenpachi":	{
@@ -593,7 +587,7 @@
 			"NAME": "Shimako"
 		},
 		"animator:ShizuruNakatsu":	{
-			"DESCRIPTION": "Discard !M! {Skills} to Enter <AS>. || If your highest {Affinity} is [G]: Deal !S! additional damage.",
+			"DESCRIPTION": "Discard !M! {Skills} to Enter <AS>. || If your highest [W] is [G]: Has + !S! damage.",
 			"NAME": "Shizuru Nakatsu"
 		},
 		"animator:SougenEsaka":	{

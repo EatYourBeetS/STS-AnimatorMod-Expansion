@@ -5,11 +5,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.genericEffects.GenericEffect_EnterStance;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.stances.ForceStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.JUtils;
+
+import java.util.Arrays;
 
 public class YasutoraSado extends AnimatorCard
 {
@@ -21,8 +25,8 @@ public class YasutoraSado extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0, 2);
-        SetUpgrade(3, 0, 0);
+        Initialize(1, 0, 6);
+        SetUpgrade(2, 0, 2);
         SetAffinity_Red(2, 0, 1);
         SetCooldown(2, 0, this::OnCooldownCompleted);
     }
@@ -50,32 +54,18 @@ public class YasutoraSado extends AnimatorCard
     }
 
     @Override
-    public boolean cardPlayable(AbstractMonster m)
+    protected float GetInitialDamage()
     {
-        if (super.cardPlayable(m))
+        if (CheckAttackCondition())
         {
-            if (m == null)
-            {
-                for (AbstractMonster enemy : GameUtilities.GetEnemies(true))
-                {
-                    if (enemy.currentBlock > 0 || IsInflictingNegativeEffect(enemy.intent))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                return m.currentBlock > 0 || IsInflictingNegativeEffect(m.intent);
-            }
+            return super.GetInitialDamage() + magicNumber;
         }
-
-        return false;
+        return super.GetInitialDamage();
     }
 
-    private boolean IsInflictingNegativeEffect(AbstractMonster.Intent intent)
+    private boolean CheckAttackCondition()
     {
-        return (intent == AbstractMonster.Intent.ATTACK_DEBUFF || intent == AbstractMonster.Intent.DEBUFF ||
-                intent == AbstractMonster.Intent.DEFEND_DEBUFF || intent == AbstractMonster.Intent.STRONG_DEBUFF);
+        Affinity highestAffinity = JUtils.FindMax(Arrays.asList(Affinity.Basic()), af -> CombatStats.Affinities.GetUsableAffinity(Affinity.Red));
+        return (highestAffinity.equals(Affinity.Red));
     }
 }

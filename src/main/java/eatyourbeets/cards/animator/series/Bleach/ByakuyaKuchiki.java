@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.special.ByakuyaBankai;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.genericEffects.GenericEffect_EnterStance;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
@@ -19,13 +20,15 @@ public class ByakuyaKuchiki extends AnimatorCard
     public static final EYBCardData DATA = Register(ByakuyaKuchiki.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Piercing)
             .PostInitialize(data -> data.AddPreview(new ByakuyaBankai(), false));
 
+    private static final CardEffectChoice choices = new CardEffectChoice();
+
 
     public ByakuyaKuchiki()
     {
         super(DATA);
 
-        Initialize(23, 14, 0);
-        SetUpgrade(3, 3, 0);
+        Initialize(10, 10, 0);
+        SetUpgrade(2, 2, 0);
         SetAffinity_Red(2, 0, 0);
         SetAffinity_Green(2, 0, 0);
     }
@@ -33,9 +36,7 @@ public class ByakuyaKuchiki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.Callback(m, (enemy, __) -> {
-            ChooseAction(enemy);
-        });
+
 
         if (ForceStance.IsActive() || AgilityStance.IsActive())
         {
@@ -43,60 +44,23 @@ public class ByakuyaKuchiki extends AnimatorCard
             GameActions.Bottom.MakeCardInDrawPile(new ByakuyaBankai());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
+        else
+        {
+            GameActions.Bottom.Callback(m, (enemy, __) -> {
+                ChooseAction(enemy);
+            });
+        }
     }
 
     private void ChooseAction(AbstractMonster m)
     {
-        AnimatorCard damage = GenerateInternal(CardType.ATTACK, this::DamageEffect).Build();
-        AnimatorCard block = GenerateInternal(CardType.SKILL, this::BlockEffect).Build();
-
-        CardGroup choices = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        choices.addToTop(damage);
-        choices.addToTop(block);
-
-        Execute(choices, m);
-    }
-
-    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onUseAction)
-    {
-        AnimatorCardBuilder builder = new AnimatorCardBuilder(ByakuyaKuchiki.DATA.ID);
-        builder.SetText(name, "", "");
-        builder.SetProperties(type, GR.Enums.Cards.THE_ANIMATOR, AbstractCard.CardRarity.RARE, CardTarget.ENEMY);
-        builder.SetOnUse(onUseAction);
-
-        if (type.equals(CardType.ATTACK))
+        if (choices.TryInitialize(this))
         {
-            builder.SetAttackType(EYBAttackType.Piercing, EYBCardTarget.Normal);
-            builder.SetNumbers(damage, 0, 0, 0);
-        }
-        else
-        {
-            builder.SetNumbers(0, block, 0, 0);
+            choices.AddEffect(new GenericEffect_EnterStance(GR.Animator.PlayerClass, AgilityStance.STANCE_ID));
+            choices.AddEffect(new GenericEffect_EnterStance(GR.Animator.PlayerClass, ForceStance.STANCE_ID));
         }
 
-        return builder;
-    }
-
-    private void DamageEffect(AbstractCard card, AbstractPlayer p, AbstractMonster m)
-    {
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SMASH);
-    }
-
-    private void BlockEffect(AbstractCard card, AbstractPlayer p, AbstractMonster m)
-    {
-        GameActions.Bottom.GainBlock(block);
-    }
-
-    private void Execute(CardGroup group, AbstractMonster m)
-    {
-        GameActions.Top.SelectFromPile(name, 1, group)
-                .SetOptions(false, false)
-                .AddCallback(m, (enemy, cards) ->
-                {
-                    AbstractCard card = cards.get(0);
-                    card.applyPowers();
-                    card.calculateCardDamage(enemy);
-                    card.use(player, enemy);
-                });
+        choices.Select(GameActions.Top, 1, m)
+                .CancellableFromPlayer(true);
     }
 }

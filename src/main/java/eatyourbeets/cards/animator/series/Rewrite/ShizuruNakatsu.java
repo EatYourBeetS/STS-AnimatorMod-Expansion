@@ -21,7 +21,7 @@ public class ShizuruNakatsu extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(1, 0, 2, 5);
+        Initialize(2, 0, 2, 6);
         SetUpgrade(0, 0, 0);
         SetAffinity_Green(2, 0, 2);
     }

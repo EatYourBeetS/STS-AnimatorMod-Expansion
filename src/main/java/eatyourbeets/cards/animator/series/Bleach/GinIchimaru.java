@@ -26,10 +26,6 @@ public class GinIchimaru extends AnimatorCard
         SetAffinity_Dark(1, 0, 0);
         SetAffinity_Blue(1, 0, 0);
         SetAffinity_Green(2, 0, 2);
-
-        SetAffinityRequirement(Affinity.Red, 3);
-        SetAffinityRequirement(Affinity.Green, 3);
-        SetAffinityRequirement(Affinity.Blue, 3);
     }
 
     @Override
@@ -54,13 +50,6 @@ public class GinIchimaru extends AnimatorCard
     public AbstractAttribute GetDamageInfo()
     {
         return super.GetDamageInfo().AddMultiplier(magicNumber);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetAffinityRequirement(Affinity.Red, 4);
-        SetAffinityRequirement(Affinity.Green, 4);
     }
 
     private void makeChoice(AbstractMonster m, int selections, int amount)

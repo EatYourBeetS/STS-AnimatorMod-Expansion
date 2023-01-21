@@ -3,10 +3,7 @@ package eatyourbeets.cards.animator.series.Bleach;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.common.CounterAttackPower;
@@ -20,11 +17,13 @@ public class OrihimeInoue extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 1, 2);
+        Initialize(0, 5, 3, 2);
         SetUpgrade(0, 3, 0);
 
         SetAffinity_Green(1, 0, 0);
         SetAffinity_Light(1, 0, 0);
+
+        SetAffinityRequirement(Affinity.Light, 2);
     }
 
     @Override
@@ -32,56 +31,11 @@ public class OrihimeInoue extends AnimatorCard
     {
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.StackPower(new OrihimeInouePower(p, magicNumber));
+        GameActions.Bottom.StackPower(new CounterAttackPower(p, magicNumber));
 
-        if (info.IsSynergizing)
+        if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.StackPower(new CounterAttackPower(p, secondaryValue));
-        }
-    }
-
-    public static class OrihimeInouePower extends AnimatorPower
-    {
-        public OrihimeInouePower(AbstractPlayer owner, int amount)
-        {
-            super(owner, OrihimeInoue.DATA);
-
-            this.amount = amount;
-
-            updateDescription();
-        }
-
-        @Override
-        public void updateDescription()
-        {
-            description = FormatDescription(0, amount);
-        }
-
-        @Override
-        public void stackPower(int stackAmount)
-        {
-            super.stackPower(stackAmount);
-            updateDescription();
-        }
-
-        @Override
-        public void atStartOfTurn()
-        {
-            RemovePower();
-        }
-
-        public int onAttacked(DamageInfo info, int damageAmount)
-        {
-            if (this.amount <= 0)
-            {
-                return damageAmount;
-            }
-
-            this.amount--;
-
             GameActions.Bottom.ChannelOrb(new Fire());
-
-            return damageAmount;
         }
     }
 }

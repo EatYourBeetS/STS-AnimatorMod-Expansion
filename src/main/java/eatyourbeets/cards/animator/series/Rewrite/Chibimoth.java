@@ -36,12 +36,12 @@ public class Chibimoth extends AnimatorCard
         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         group.addToBottom(CreateChoice(text[0], (c1, p1, m1) ->
         {
-            GameActions.Bottom.GainAgility(magicNumber, false);
+            GameActions.Bottom.GainAffinity(Affinity.Green,magicNumber, false);
             BetaActions.Bottom.GainSupportDamage(secondaryValue);
         }));
         group.addToBottom(CreateChoice(text[1], (c1, p1, m1) ->
         {
-            GameActions.Bottom.GainForce(magicNumber, false);
+            GameActions.Bottom.GainAffinity(Affinity.Red,magicNumber, false);
             GameActions.Bottom.GainThorns(secondaryValue);
         }));
 

@@ -37,7 +37,7 @@ public class MioTakamiya extends AnimatorCard_UltraRare implements StartupCard
 
                         if (agilityGain > 0)
                         {
-                            GameActions.Bottom.GainAgility(agilityGain);
+                            GameActions.Bottom.GainAffinity(Affinity.Green,agilityGain);
                         }
                     });
         }

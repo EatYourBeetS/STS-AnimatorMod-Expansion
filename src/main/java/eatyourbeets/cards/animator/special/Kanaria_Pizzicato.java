@@ -44,7 +44,7 @@ public class Kanaria_Pizzicato extends AnimatorCard
                         GameActions.Bottom.ChannelOrb(new Aether());
                         break;
                     default:
-                        GameActions.Bottom.GainAgility(1, true);
+                        GameActions.Bottom.GainAffinity(Affinity.Green,1, true);
                 }
             }
         }));

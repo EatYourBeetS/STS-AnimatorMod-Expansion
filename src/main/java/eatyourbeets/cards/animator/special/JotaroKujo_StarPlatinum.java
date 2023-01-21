@@ -24,7 +24,7 @@ public class JotaroKujo_StarPlatinum extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainIntangible(secondaryValue);
-        GameActions.Bottom.GainForce(magicNumber);
+        GameActions.Bottom.GainAffinity(Affinity.Red,magicNumber);
     }
 
     @Override
