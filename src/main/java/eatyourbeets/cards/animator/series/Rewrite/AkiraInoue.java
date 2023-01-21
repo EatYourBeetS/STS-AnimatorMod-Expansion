@@ -17,7 +17,7 @@ import eatyourbeets.utilities.RandomizedList;
 
 public class AkiraInoue extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(AkiraInoue.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Self);
+    public static final EYBCardData DATA = Register(AkiraInoue.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Self).SetSeriesFromClassPackage();
 
     public AkiraInoue()
     {

@@ -11,7 +11,7 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class MayuriKurotsuchi extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(MayuriKurotsuchi.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Normal);
+    public static final EYBCardData DATA = Register(MayuriKurotsuchi.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.Normal).SetSeriesFromClassPackage();
     public static final int POISON_THRESHOLD = 12;
 
 

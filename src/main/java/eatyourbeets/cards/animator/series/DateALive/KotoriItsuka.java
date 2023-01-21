@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class KotoriItsuka extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(KotoriItsuka.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal);
+    public static final EYBCardData DATA = Register(KotoriItsuka.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal).SetSeriesFromClassPackage();
     public static final int THRESHOLD = 12;
     public static final int BURNING_ATTACK_BONUS = 15;
 

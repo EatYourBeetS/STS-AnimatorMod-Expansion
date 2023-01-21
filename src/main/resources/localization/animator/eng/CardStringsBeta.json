@@ -94,7 +94,7 @@
 			"NAME": "Byakuya Kuchiki"
 		},
 		"animator:GinIchimaru":	{
-			"DESCRIPTION": "Choose 1: Gain !M! [R] or [G]. || <GS>: Exhaust and repeat this effect.",
+			"DESCRIPTION": "Choose 1: Gain !M! [R] or [G]. || <AS>: Exhaust and repeat this effect.",
 			"NAME": "Gin Ichimaru"
 		},
 		"animator:KanameTousen":	{
@@ -527,7 +527,7 @@
 			"NAME": "Akira Inoue"
 		},
 		"animator:Chibimoth":	{
-			"DESCRIPTION": "Choose 1: Gain !M! [R] and !S! [Thorns], ** or Gain !M! [G] and !S! [Support Damage]. || Draw Kotori ** Kanbe from any pile.",
+			"DESCRIPTION": "Choose 1: Gain !M! [R] and !S! [Thorns], ** or Gain !M! [G] and !S! [Support Damage]. || <LIM>. Neutral Stance: Obtain {Kotori Kanbe}.",
 			"EXTENDED_DESCRIPTION": [
 				"Gain !M! [G] and [Support Damage].",
 				"Gain !M! [R] and [Thorns]"
@@ -655,7 +655,7 @@
 			"NAME": "Kanaria"
 		},
 		"animator:Kanaria_Pizzicato":	{
-			"DESCRIPTION": "Cycle a card. If you draw an: ** Attack -> Apply !M! [Poison] to ALL enemies; ** Power -> Channel [Aether]; ** Other -> Boost [G].",
+			"DESCRIPTION": "Cycle a card. If you draw an: ** Attack -> Apply !M! [Poison] to ALL enemies; ** Power -> Channel [Aether]; ** Other -> Boost [L].",
 			"NAME": "Pizzicato"
 		},
 		"animator:Kirakishou":	{

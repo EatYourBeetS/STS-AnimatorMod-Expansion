@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
@@ -15,6 +16,7 @@ import eatyourbeets.utilities.GameEffects;
 public class Chibimoth extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Chibimoth.class).SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
+            .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new KotoriKanbe2(), false));
 
     public Chibimoth()
@@ -56,13 +58,10 @@ public class Chibimoth extends AnimatorCard
                     }
                 });
 
-        GameActions.Bottom.Callback(() ->
+        if (player.stance.ID.equals(NeutralStance.STANCE_ID) && info.TryActivateLimited())
         {
-            if (!DrawKotoriKanbe(player.drawPile))
-            {
-                DrawKotoriKanbe(player.discardPile);
-            }
-        });
+            GameActions.Bottom.MakeCardInHand(new KotoriKanbe2());
+        }
     }
 
     private AnimatorCard_Dynamic CreateChoice(String text, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onSelect)
@@ -74,25 +73,5 @@ public class Chibimoth extends AnimatorCard
                 .SetNumbers(0, 0, magicNumber, secondaryValue)
                 .SetOnUse(onSelect)
                 .SetText(name, text, text)).Build();
-    }
-
-    private boolean DrawKotoriKanbe(CardGroup group)
-    {
-        for (AbstractCard c : group.group)
-        {
-            if (KotoriKanbe2.DATA.ID.equals(c.cardID))
-            {
-                if (group.type != CardGroup.CardGroupType.HAND)
-                {
-                    GameEffects.List.ShowCardBriefly(makeStatEquivalentCopy());
-                    GameActions.Top.MoveCard(c, group, player.hand)
-                            .ShowEffect(true, true);
-                }
-
-                return true;
-            }
-        }
-
-        return false;
     }
 }

@@ -12,7 +12,7 @@ public class IchigoKurosaki2 extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(IchigoKurosaki2.class)
             .SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.Random)
-
+            .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new IchigoKurosaki_Bankai(), false));
 
     public IchigoKurosaki2()

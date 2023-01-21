@@ -16,6 +16,7 @@ public class Suigintou extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Suigintou.class)
             .SetAttack(2, AbstractCard.CardRarity.RARE, EYBAttackType.Elemental)
+            .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new Suigintou_BlackFeather(), false));
 
     public Suigintou()

@@ -14,7 +14,7 @@ import eatyourbeets.utilities.JUtils;
 
 public class RinneSonogami extends AnimatorCard implements OnAffinitySealedSubscriber
 {
-    public static final EYBCardData DATA = Register(RinneSonogami.class).SetSkill(1, CardRarity.COMMON);
+    public static final EYBCardData DATA = Register(RinneSonogami.class).SetSkill(1, CardRarity.COMMON).SetSeriesFromClassPackage();
 
     public RinneSonogami()
     {

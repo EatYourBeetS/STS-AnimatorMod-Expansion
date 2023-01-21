@@ -14,7 +14,8 @@ import eatyourbeets.utilities.GameUtilities;
 public class Hinaichigo extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Hinaichigo.class)
-            .SetSkill(1, AbstractCard.CardRarity.COMMON);
+            .SetSkill(1, AbstractCard.CardRarity.COMMON)
+            .SetSeriesFromClassPackage();
 
     public Hinaichigo()
     {

@@ -14,7 +14,7 @@ import eatyourbeets.utilities.JUtils;
 public class Barasuishou extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Barasuishou.class)
-            .SetAttack(1, AbstractCard.CardRarity.UNCOMMON, EYBAttackType.Elemental, eatyourbeets.cards.base.EYBCardTarget.ALL);
+            .SetAttack(1, AbstractCard.CardRarity.UNCOMMON, EYBAttackType.Elemental, eatyourbeets.cards.base.EYBCardTarget.ALL).SetSeriesFromClassPackage();
 
     public Barasuishou()
     {

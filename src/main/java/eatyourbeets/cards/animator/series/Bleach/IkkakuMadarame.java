@@ -17,6 +17,7 @@ public class IkkakuMadarame extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(IkkakuMadarame.class)
             .SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
+            .SetSeriesFromClassPackage()
             .PostInitialize(
                     data ->
                             data.AddPreview(new ZarakiKenpachi(), false).AddPreview(new IkkakuBankai(), false));

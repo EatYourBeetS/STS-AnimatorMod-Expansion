@@ -15,7 +15,8 @@ import eatyourbeets.utilities.JUtils;
 public class LaplacesDemon extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(LaplacesDemon.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None);
+            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
 
     public LaplacesDemon()
     {

@@ -21,6 +21,7 @@ public class Kanaria extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Kanaria.class)
             .SetPower(2, AbstractCard.CardRarity.RARE)
+            .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new Kanaria_Pizzicato(), false));
     public static final int COST = 2;
 

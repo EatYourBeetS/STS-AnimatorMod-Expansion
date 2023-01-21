@@ -20,7 +20,7 @@ import eatyourbeets.utilities.GameEffects;
 
 public class KotarouTennouji extends AnimatorCard implements OnStanceChangedSubscriber, OnStartOfTurnPostDrawSubscriber
 {
-    public static final EYBCardData DATA = Register(KotarouTennouji.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Normal);
+    public static final EYBCardData DATA = Register(KotarouTennouji.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Normal).SetSeriesFromClassPackage();
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 

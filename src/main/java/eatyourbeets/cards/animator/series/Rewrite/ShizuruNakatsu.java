@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 public class ShizuruNakatsu extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(ShizuruNakatsu.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Ranged, EYBCardTarget.ALL);
+    public static final EYBCardData DATA = Register(ShizuruNakatsu.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Ranged, EYBCardTarget.ALL).SetSeriesFromClassPackage();
 
     public ShizuruNakatsu()
     {

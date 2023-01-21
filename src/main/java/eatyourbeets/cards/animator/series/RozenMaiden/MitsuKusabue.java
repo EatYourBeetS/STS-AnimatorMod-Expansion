@@ -12,7 +12,8 @@ public class MitsuKusabue extends AnimatorCard
 {
     public static final EYBCardData DATA =
             Register(MitsuKusabue.class)
-                    .SetSkill(1, AbstractCard.CardRarity.COMMON, EYBCardTarget.None);
+                    .SetSkill(1, AbstractCard.CardRarity.COMMON, EYBCardTarget.None)
+                    .SetSeriesFromClassPackage();
 
     public MitsuKusabue()
     {

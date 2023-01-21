@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class YoshinoHaruhiko extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(YoshinoHaruhiko.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.Random);
+    public static final EYBCardData DATA = Register(YoshinoHaruhiko.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.Random).SetSeriesFromClassPackage();
 
     public YoshinoHaruhiko()
     {

@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class NiaHonjou extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(NiaHonjou.class).SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(NiaHonjou.class).SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None).SetSeriesFromClassPackage();
 
     public NiaHonjou()
     {

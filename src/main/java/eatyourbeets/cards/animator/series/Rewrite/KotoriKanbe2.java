@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class KotoriKanbe2 extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(KotoriKanbe2.class).SetSkill(1, CardRarity.RARE);
+    public static final EYBCardData DATA = Register(KotoriKanbe2.class).SetSkill(1, CardRarity.RARE).SetSeriesFromClassPackage();
     public static final int HP_HEAL_THRESHOLD = 30;
 
     public KotoriKanbe2()

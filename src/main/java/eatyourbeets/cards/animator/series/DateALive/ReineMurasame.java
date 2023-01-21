@@ -12,6 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class ReineMurasame extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ReineMurasame.class).SetSkill(-1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new ShidoItsuka(), false));
 
     public ReineMurasame()

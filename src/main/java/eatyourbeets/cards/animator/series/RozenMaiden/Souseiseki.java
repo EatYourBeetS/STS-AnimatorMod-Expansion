@@ -16,6 +16,7 @@ public class Souseiseki extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Souseiseki.class)
             .SetAttack(1, AbstractCard.CardRarity.COMMON, EYBAttackType.Normal, eatyourbeets.cards.base.EYBCardTarget.Normal)
+            .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new Suiseiseki(), false));
 
     public Souseiseki()

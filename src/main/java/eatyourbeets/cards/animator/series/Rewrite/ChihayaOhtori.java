@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class ChihayaOhtori extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(ChihayaOhtori.class).SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Normal);
+    public static final EYBCardData DATA = Register(ChihayaOhtori.class).SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Normal).SetSeriesFromClassPackage();
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 

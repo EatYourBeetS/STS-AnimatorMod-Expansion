@@ -17,6 +17,7 @@ public class JunSakurada extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(JunSakurada.class)
             .SetSkill(1, AbstractCard.CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new Curse_JunTormented(), false));
 
     public JunSakurada()

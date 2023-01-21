@@ -15,7 +15,7 @@ import eatyourbeets.utilities.JUtils;
 
 public class Mayuri extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(Mayuri.class).SetSkill(2, CardRarity.COMMON);
+    public static final EYBCardData DATA = Register(Mayuri.class).SetSkill(2, CardRarity.COMMON).SetSeriesFromClassPackage();
 
     public Mayuri()
     {

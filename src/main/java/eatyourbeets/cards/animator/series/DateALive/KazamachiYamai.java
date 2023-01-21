@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class KazamachiYamai extends AnimatorCard implements OnAffinityGainedSubscriber
 {
-    public static final EYBCardData DATA = Register(KazamachiYamai.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal);
+    public static final EYBCardData DATA = Register(KazamachiYamai.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal).SetSeriesFromClassPackage();
 
     public KazamachiYamai()
     {

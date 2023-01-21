@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class TomoeKashiwaba extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(TomoeKashiwaba.class).SetSkill(1, AbstractCard.CardRarity.COMMON, eatyourbeets.cards.base.EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(TomoeKashiwaba.class).SetSkill(1, AbstractCard.CardRarity.COMMON, eatyourbeets.cards.base.EYBCardTarget.None).SetSeriesFromClassPackage();
 
     public TomoeKashiwaba()
     {

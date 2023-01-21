@@ -3,10 +3,7 @@ package eatyourbeets.cards.animator.special;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardSeries;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.orbs.animator.Aether;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.TargetHelper;
@@ -44,7 +41,7 @@ public class Kanaria_Pizzicato extends AnimatorCard
                         GameActions.Bottom.ChannelOrb(new Aether());
                         break;
                     default:
-                        GameActions.Bottom.GainAffinity(Affinity.Green,1, true);
+                        GameActions.Bottom.GainAffinity(Affinity.Light,1, true);
                 }
             }
         }));

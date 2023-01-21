@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class MukuroHoshimiya extends AnimatorCard implements StartupCard, OnShuffleSubscriber
 {
-    public static final EYBCardData DATA = Register(MukuroHoshimiya.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Elemental);
+    public static final EYBCardData DATA = Register(MukuroHoshimiya.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Elemental).SetSeriesFromClassPackage();
     private final ArrayList<AbstractCard> cardList = new ArrayList<>();
 
 

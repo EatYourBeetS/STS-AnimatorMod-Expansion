@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class Natsumi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Natsumi.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.Random);
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.Random).SetSeriesFromClassPackage();
 
     private static HashMap<Integer, ArrayList<AbstractCard>> cardPool;
 
