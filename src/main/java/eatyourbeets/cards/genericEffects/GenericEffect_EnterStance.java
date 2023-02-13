@@ -25,13 +25,7 @@ public class GenericEffect_EnterStance extends GenericEffect
     @Override
     public String GetText()
     {
-        // TODO: Create a reusable method which replaces all keywords with their icons
-        String text = tooltip.title
-                .replace(GR.Tooltips.Agility.title, "[A]")
-                .replace(GR.Tooltips.Force.title, "[F]")
-                .replace(GR.Tooltips.Intellect.title, "[I]");
-
-        return GR.Animator.Strings.Actions.EnterStance("{" + text + "}", true);
+        return GR.Animator.Strings.Actions.EnterStance("{" + tooltip.title + "}", true);
     }
 
     @Override

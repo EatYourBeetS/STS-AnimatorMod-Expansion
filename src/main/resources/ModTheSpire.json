@@ -3,7 +3,7 @@
   "name": "The Animator - Beta",
   "author_list": ["PinaCoLada", "EatYourBeetS"],
   "description": "Expansion pack for The Animator mod with new series and cards.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "sts_version": "12-22-2020",
   "mts_version": "3.22.0",
   "dependencies": ["basemod", "stslib", "eatyourbeetsvg-theanimator"],

@@ -51,7 +51,6 @@ public class KurumiTokisaki extends AnimatorCard
                         GameActions.Bottom.StackPower(new EnergizedPower(p, 1));
                     }
                 });
-        cooldown.ProgressCooldownAndTrigger(m);
     }
 
     public void triggerWhenDrawn() {
